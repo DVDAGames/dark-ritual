@@ -115,14 +115,12 @@ func useAction():
 
 
 func _on_ritual_circle_area_entered(area, direction):
-  print('RITUAL')
   if currentForm == forms.CLERIC:
     action = "swap"
     actionMovement = direction
 
 
 func _on_flame_area_entered(area, direction):
-  print('FLAME')
   if currentForm == forms.GHOST:
     action = "swap"
     actionMovement = direction
