@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://yynmxesdh50v"
-path="res://.godot/imported/dark-ritual.wav-cf2fb4affae4d5ab795ff6d0833eb0c6.sample"
+path="res://.godot/imported/dark-ritual.wav-3a25538c4de381d1883199738323c228.sample"
 
 [deps]
 
-source_file="res://dark-ritual.wav"
-dest_files=["res://.godot/imported/dark-ritual.wav-cf2fb4affae4d5ab795ff6d0833eb0c6.sample"]
+source_file="res://sounds/dark-ritual.wav"
+dest_files=["res://.godot/imported/dark-ritual.wav-3a25538c4de381d1883199738323c228.sample"]
 
 [params]
 

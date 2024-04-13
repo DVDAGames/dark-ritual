@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgktvj01rvd0j"
-path="res://.godot/imported/ward.png-fd9015ffbcd4d78970f4f15b1a4923b4.ctex"
+uid="uid://cphfeucx3ai4u"
+path="res://.godot/imported/flame.png-8ab307375af45eff8533b7bbfbed4879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ward.png"
-dest_files=["res://.godot/imported/ward.png-fd9015ffbcd4d78970f4f15b1a4923b4.ctex"]
+source_file="res://sprites/flame.png"
+dest_files=["res://.godot/imported/flame.png-8ab307375af45eff8533b7bbfbed4879.ctex"]
 
 [params]
 

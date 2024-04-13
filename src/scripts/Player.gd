@@ -9,8 +9,8 @@ var inputs := {
   "ui_down": Vector2.DOWN
 }
 
-var clericTexture := load("res://cleric.png")
-var ghostTexture := load("res://ghost.png")
+var clericTexture := load("res://sprites/cleric.png")
+var ghostTexture := load("res://sprites/ghost.png")
 
 enum forms {
   CLERIC = 1,
@@ -98,9 +98,6 @@ func canMove(direction):
 
   return ray.is_colliding()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-  pass
 
 func useAction():
     if action == "swap":

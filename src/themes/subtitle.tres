@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://cusadnmhd8mjx"]
 
-[ext_resource type="FontFile" uid="uid://vbuhycledy6l" path="res://Abel-Regular.ttf" id="1_167td"]
+[ext_resource type="FontFile" uid="uid://vbuhycledy6l" path="res://fonts/Abel-Regular.ttf" id="1_167td"]
 
 [resource]
 default_font = ExtResource("1_167td")

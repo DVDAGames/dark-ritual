@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://b4v7jhn0yyqbw"]
 
-[ext_resource type="FontFile" uid="uid://bd4qknthw4y8v" path="res://Jersey15-Regular.ttf" id="1_xh8kx"]
+[ext_resource type="FontFile" uid="uid://bd4qknthw4y8v" path="res://fonts/Jersey15-Regular.ttf" id="1_xh8kx"]
 
 [resource]
 default_font = ExtResource("1_xh8kx")

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://vbuhycledy6l"
-path="res://.godot/imported/Abel-Regular.ttf-e4be4644678bb23d6df0a7e1d2e915ce.fontdata"
+path="res://.godot/imported/Abel-Regular.ttf-b54387777df5cb00667324c8031ef4b4.fontdata"
 
 [deps]
 
-source_file="res://Abel-Regular.ttf"
-dest_files=["res://.godot/imported/Abel-Regular.ttf-e4be4644678bb23d6df0a7e1d2e915ce.fontdata"]
+source_file="res://fonts/Abel-Regular.ttf"
+dest_files=["res://.godot/imported/Abel-Regular.ttf-b54387777df5cb00667324c8031ef4b4.fontdata"]
 
 [params]
 
