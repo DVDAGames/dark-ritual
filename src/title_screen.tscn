@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://qr7rpfenf7i7"]
+
+[ext_resource type="Script" path="res://title_screen.gd" id="1_07jyo"]
+[ext_resource type="Texture2D" uid="uid://b2qk1vb0sui7j" path="res://wizard.png" id="1_7sy1g"]
+[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://base_theme.tres" id="2_08kmf"]
+[ext_resource type="Theme" uid="uid://bf0sj3w50pf83" path="res://title.tres" id="3_7xtgk"]
+[ext_resource type="Theme" uid="uid://cusadnmhd8mjx" path="res://subtitle.tres" id="4_mdgx7"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_07jyo")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(842, 536)
+scale = Vector2(1.23047, 1.23047)
+texture = ExtResource("1_7sy1g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 470.0
+offset_right = 227.0
+offset_bottom = 580.0
+theme = ExtResource("2_08kmf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_08kmf")
+theme_type_variation = &"FlatButton"
+text = "Play"
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_08kmf")
+theme_type_variation = &"FlatButton"
+text = "Options"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_08kmf")
+theme_type_variation = &"FlatButton"
+text = "Quit"
+alignment = 0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 106.0
+theme = ExtResource("3_7xtgk")
+text = "DARK RITUAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 82.0
+offset_right = 734.0
+offset_bottom = 105.0
+theme = ExtResource("4_mdgx7")
+text = "Dead Villager Dead Adventurer Games"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -9,3 +9,6 @@ enum LayerTypes {
 }
 
 static var Layers := LayerTypes
+
+func _ready():
+  pass

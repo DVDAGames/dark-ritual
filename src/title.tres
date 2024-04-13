@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bf0sj3w50pf83"]
+
+[ext_resource type="FontFile" uid="uid://bd4qknthw4y8v" path="res://Jersey15-Regular.ttf" id="1_q0xha"]
+
+[resource]
+default_font = ExtResource("1_q0xha")
+default_font_size = 80
