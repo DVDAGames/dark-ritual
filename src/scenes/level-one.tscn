@@ -232,6 +232,20 @@ position = Vector2(-486, 263)
 position = Vector2(39, 23)
 shape = SubResource("RectangleShape2D_ufjkh")
 
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP" type="Label" parent="HUD" groups=["hp"]]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 292.0
+offset_right = 560.0
+offset_bottom = 315.0
+text = "Rituals Left:"
+
 [connection signal="area_entered" from="RitualCircle" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(0, -1)]]
 [connection signal="area_entered" from="RitualCircle2" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(1, 0)]]
 [connection signal="area_entered" from="RitualCircle3" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(0, -1)]]

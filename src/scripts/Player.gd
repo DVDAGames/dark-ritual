@@ -20,11 +20,11 @@ enum forms {
 var action := ""
 var actionMovement := Vector2(0,0)
 
+
 @onready var currentForm := forms.CLERIC
 @onready var ray := $RayCast2D
 @onready var tileMapNode := get_node("../Map")
-@onready var ritualCircle := get_node("../RitualCircle")
-@onready var flame := get_node("../Flame")
+@onready var hudHp := get_node("../HUD/HP")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,7 +38,13 @@ func _ready():
 
   # HACK: for some reason the intial player state can clip through the walls and into the void
   # swapping the model to the Cleric model fixes the collision detection
-  swap(forms.GHOST)
+  swap(forms.GHOST, true)
+
+  updateHp()
+
+func updateHp():
+  if hudHp != null:
+    hudHp.set_text(str("Rituals Left: ", Globals.currentHealth))
 
 func startPosition():
   # try to put player back at last position in scene
@@ -60,24 +66,7 @@ func _unhandled_input(event):
       move(inputs[direction])
 
 
-func findNearestCell(layer):
-  var cell = tileMapNode.local_to_map(position)
-
-  # right, bottom right, top right, bottom, top, right top, left
-  var cellNeighbors = [0, 3,  4, 12, 8, ]
-
-  var neighbors = tileMapNode.get_surrounding_cells(cell)
-
-  print(neighbors)
-
-  for neighborCell in neighbors:
-    var cellDetails = tileMapNode.get_cell_tile_data(layer, neighborCell, false)
-
-    print(cellDetails)
-
-    position = tileMapNode.map_to_local(neighborCell)
-
-func swap(form):
+func swap(form, special = false):
   if form == forms.CLERIC:
     $PlayerSprite.set_texture(ghostTexture)
 
@@ -89,6 +78,10 @@ func swap(form):
 
     get_tree().call_group("flames", "enter_interactive_mode")
     get_tree().call_group("rituals", "exit_interactive_mode")
+
+    if not special:
+      Globals.currentHealth -= 1
+      updateHp()
   else:
     $PlayerSprite.set_texture(clericTexture)
 
@@ -132,7 +125,7 @@ func useAction():
 
 
 func _on_ritual_circle_area_entered(area, direction):
-  if currentForm == forms.CLERIC:
+  if currentForm == forms.CLERIC and Globals.currentHealth > 0:
     action = "swap"
     actionMovement = direction
 

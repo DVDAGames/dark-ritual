@@ -158,6 +158,20 @@ position = Vector2(532, -41)
 position = Vector2(13, 41)
 shape = SubResource("RectangleShape2D_ufjkh")
 
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP" type="Label" parent="HUD" groups=["hp"]]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 292.0
+offset_right = 560.0
+offset_bottom = 315.0
+text = "Rituals Left:"
+
 [connection signal="area_entered" from="RitualCircle" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(1, 0)]]
 [connection signal="area_entered" from="Flame" to="Player" method="_on_flame_area_entered" binds= [Vector2(1, 0)]]
 [connection signal="finished" from="BGMusic" to="." method="_on_audio_stream_player_finished"]

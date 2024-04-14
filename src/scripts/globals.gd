@@ -21,5 +21,6 @@ static var LevelPositions:Array[Vector2] = [
 ]
 
 static var currentLevel := 0
+static var currentHealth := 3
 
 static var Layers := LayerTypes
