@@ -6,6 +6,14 @@ extends Area2D
 @onready var tooltip := get_node("../HUD/Tooltip")
 @onready var Player := get_node("../Player")
 
+func ignite():
+  if not isLit:
+    $LitBrazier.visible = true
+    $UnlitBrazier.visible = false
+
+    isLit = true
+
+
 func hit_by_firebolt():
   if not isLit:
     $LitBrazier.visible = true
@@ -20,6 +28,11 @@ func hit_by_firebolt():
         get_tree().change_scene_to_file("res://scenes/level-three-pt2.tscn")
       elif Globals.currentStep == 1:
         get_tree().change_scene_to_file("res://scenes/level-three-pt3.tscn")
+    elif Globals.currentLevel == 4:
+      Globals.LevelPositions[Globals.currentLevel] = Player.position
+
+      if Globals.currentStep == 0:
+        get_tree().change_scene_to_file("res://scenes/level-four-pt2.tscn")
 
 
 func _on_area_entered(area):
@@ -32,9 +45,14 @@ func _on_area_entered(area):
       if Globals.currentStep < 1:
         tooltip.set_text("An unlit brazier.")
         tooltip.visible = true
-    else:
+    elif Globals.currentLevel == 4:
+      if Globals.currentStep < 1:
+        tooltip.set_text("An unlit brazier.")
+        tooltip.visible = true
+    elif Globals.currentLevel != 6:
       tooltip.set_text("An unlit brazier.")
       tooltip.visible = true
+
 
 func _on_area_exited(_area):
   if tooltip.visible:

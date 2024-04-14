@@ -12,8 +12,6 @@ func _ready():
   Globals.levelStartingHealth = Globals.currentHealth
   Globals.levelStartingKeys = Globals.keys
   Globals.levelStartingItems = Globals.currentItems
-  Globals.currentStep = 0
+  Globals.currentStep = 2
 
-  ## TODO: REVERT
-  Globals.currentItems.append("fire_amulet")
   $Player.startPosition()

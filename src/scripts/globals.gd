@@ -17,6 +17,7 @@ static var Levels := [
   "res://scenes/level-three.tscn",
   "res://scenes/level-four.tscn",
   "res://scenes/level-five.tscn",
+  "res://scenes/level-six.tscn"
 ]
 
 static var LevelSteps: Array[int] = [
@@ -24,15 +25,19 @@ static var LevelSteps: Array[int] = [
   0,
   0,
   2,
+  1,
   0,
+  1,
 ]
 
 static var Items := {
-  fire_amulet = "Fire Amulet"
+  fire_amulet = "Fire Amulet",
+  unholy_flame = "Unholy Flame"
 }
 
 static var ItemDescriptions := {
-  fire_amulet = "Press SPACEBAR to case Firebolt."
+  fire_amulet = "Press SPACEBAR to case Firebolt.",
+  unholy_flame = "This unholy flame burns a dark vibrant blue."
 }
 
 static var LevelPositions:Array[Vector2] = [
@@ -42,6 +47,7 @@ static var LevelPositions:Array[Vector2] = [
   Vector2(0,0),
   Vector2(0,0),
   Vector2(0,0),
+  Vector2(0,0)
 ]
 
 static var currentLevel := 0

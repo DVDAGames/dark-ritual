@@ -1,6 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://dlq5pdwspvbna"]
+[gd_scene load_steps=41 format=3 uid="uid://dlq5pdwspvbna"]
 
-[ext_resource type="Script" path="res://scenes/level-three-pt3.gd" id="1_kbkfs"]
+[ext_resource type="Script" path="res://scripts/level-three-pt3.gd" id="1_kbkfs"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_vomm5"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_qs4j4"]
 [ext_resource type="Texture2D" uid="uid://byh1o0djl175q" path="res://sprites/tile.png" id="8_1ygx8"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dfrcnuib5cn1q" path="res://sprites/door_bottom.png" id="12_vgtb0"]
 [ext_resource type="Texture2D" uid="uid://5v3fg8xp56em" path="res://sprites/door_left.png" id="13_pwcrl"]
 [ext_resource type="Texture2D" uid="uid://bb578y7xm8hbl" path="res://sprites/door_right.png" id="14_c0ace"]
-[ext_resource type="Script" path="res://scenes/Brazier.gd" id="19_b2s6n"]
+[ext_resource type="Script" path="res://scripts/Key.gd" id="15_mekfp"]
+[ext_resource type="Texture2D" uid="uid://cfctmpxfpjk24" path="res://sprites/key.png" id="16_rr3aa"]
+[ext_resource type="Script" path="res://scripts/Brazier.gd" id="19_b2s6n"]
 [ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="20_448h2"]
 [ext_resource type="Texture2D" uid="uid://cvfuyop76xdqw" path="res://sprites/brazier_lit.png" id="21_lalab"]
 [ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="22_t5pfv"]
@@ -205,6 +207,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8c3y"]
 size = Vector2(21, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqx5e"]
+size = Vector2(40, 22)
+
 [node name="LevelThreePt3" type="Node2D" groups=["unapusable"]]
 position = Vector2(-1, 0)
 script = ExtResource("1_kbkfs")
@@ -340,6 +345,22 @@ frame_progress = 0.646161
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_g8c3y")
 
+[node name="Key" type="Area2D" parent="." groups=["keys"]]
+z_index = 4
+position = Vector2(-416, -223)
+collision_layer = 14
+collision_mask = 14
+script = ExtResource("15_mekfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Key"]
+z_index = 4
+texture = ExtResource("16_rr3aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
+z_index = 3
+position = Vector2(4, -1)
+shape = SubResource("RectangleShape2D_rqx5e")
+
 [connection signal="timeout" from="Player/FireboltCooldown" to="Player" method="_on_firebolt_cooldown_timeout"]
 [connection signal="area_entered" from="Goal" to="Player" method="_on_goal_area_entered"]
 [connection signal="area_exited" from="Goal" to="Player" method="_on_goal_area_exited"]
@@ -349,3 +370,5 @@ shape = SubResource("RectangleShape2D_g8c3y")
 [connection signal="area_exited" from="Brazier" to="Brazier" method="_on_area_exited"]
 [connection signal="area_entered" from="Brazier2" to="Brazier2" method="_on_area_entered"]
 [connection signal="area_exited" from="Brazier2" to="Brazier2" method="_on_area_exited"]
+[connection signal="area_entered" from="Key" to="Player" method="_on_key_area_entered"]
+[connection signal="area_exited" from="Key" to="Player" method="_on_key_area_exited"]

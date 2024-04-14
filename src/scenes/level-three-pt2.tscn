@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://b3wy1phbgfw71"]
 
-[ext_resource type="Script" path="res://scenes/level-three-pt2.gd" id="1_hin7t"]
+[ext_resource type="Script" path="res://scripts/level-three-pt2.gd" id="1_hin7t"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_oy753"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_2u7bs"]
 [ext_resource type="Texture2D" uid="uid://byh1o0djl175q" path="res://sprites/tile.png" id="8_j684v"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dfrcnuib5cn1q" path="res://sprites/door_bottom.png" id="12_bu10d"]
 [ext_resource type="Texture2D" uid="uid://5v3fg8xp56em" path="res://sprites/door_left.png" id="13_t6vy0"]
 [ext_resource type="Texture2D" uid="uid://bb578y7xm8hbl" path="res://sprites/door_right.png" id="14_t2nx2"]
-[ext_resource type="Script" path="res://scenes/Brazier.gd" id="19_strgb"]
+[ext_resource type="Script" path="res://scripts/Brazier.gd" id="19_strgb"]
 [ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="20_8y3vb"]
 [ext_resource type="Texture2D" uid="uid://cvfuyop76xdqw" path="res://sprites/brazier_lit.png" id="21_fq1gg"]
 [ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="22_iyho8"]

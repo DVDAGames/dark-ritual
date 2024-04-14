@@ -30,7 +30,6 @@ var canCastFirebolt:= true
 @onready var hudKeys := get_node("../HUD/Keys")
 @onready var tooltip := get_node("../HUD/Tooltip")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
   ray.set_collision_mask_value(Globals.Layers.WALLS, false)
@@ -42,7 +41,12 @@ func _ready():
 
   # HACK: for some reason the intial player state can clip through the walls and into the void
   # swapping the model to the Cleric model fixes the collision detection
-  swap(forms.GHOST, true)
+  if Globals.currentLevel == 5:
+    print('GHOST')
+    currentForm = forms.GHOST
+    swap(forms.CLERIC, true)
+  else:
+    swap(forms.GHOST, true)
 
   $Caster.transform = Transform2D(0.0, position)
 
@@ -181,9 +185,19 @@ func useAction():
       updateKeys()
 
       get_tree().call_group("chests", "exit_interactive_mode")
-    elif Globals.currentItems.has("fire_amulet") and canCastFirebolt:
-      castFirebolt()
+    elif action == "void":
+      if Globals.currentLevel == 4:
+        Globals.LevelPositions[Globals.currentLevel] = position
+        get_tree().change_scene_to_file("res://scenes/level-five.tscn")
+      elif Globals.currentLevel == 5:
+        Globals.LevelPositions[Globals.currentLevel] = position
+        get_tree().change_scene_to_file("res://scenes/level-six.tscn")
+    elif action == "ritual":
+      get_tree().call_group("braziers", "ignite")
 
+      get_tree().call_group("voids", "appear")
+    elif currentForm == forms.CLERIC and Globals.currentItems.has("fire_amulet") and canCastFirebolt:
+      castFirebolt()
 
     # MOVE IF NECESSARY
     if actionMovement != Vector2(0,0):
@@ -298,6 +312,9 @@ func _on_potion_area_entered(_area):
 
     action = "potion"
     actionMovement = Vector2(0,0)
+  else:
+    tooltip.set_text("A blood potion, but I'm feeling fine.")
+    tooltip.visible = true
 
 
 func _on_potion_area_exited(_area):
@@ -331,3 +348,41 @@ func _on_chest_area_exited(_area):
 
 func _on_firebolt_cooldown_timeout():
   canCastFirebolt = true
+
+
+func _on_ethereal_door_area_entered(_area):
+  tooltip.set_text("Press SPACEBAR to enter the ethereal void.")
+  tooltip.visible = true
+
+  action = "void"
+  actionMovement = Vector2(0,0)
+
+
+func _on_ethereal_door_area_exited(_area):
+  tooltip.visible = false
+  tooltip.set_text("")
+
+  action = ""
+  actionMovement = Vector2(0,0)
+
+
+func _on_brazier_area_entered(_area):
+  if Globals.currentLevel == 6:
+    if currentForm == 2:
+      if Globals.currentItems.has("unholy_flame"):
+        tooltip.set_text("Press SPACEBAR to channel the unholy flame and light the brazier.")
+        tooltip.visible = true
+
+        action = "ritual"
+        actionMovement = Vector2(0,0)
+      else:
+        tooltip.set_text("An unlit brazier filled with incense and some kind of oil.")
+        tooltip.visible = true
+
+
+func _on_brazier_area_exited(area):
+  tooltip.visible = false
+  tooltip.set_text("")
+
+  action = ""
+  actionMovement = Vector2(0,0)

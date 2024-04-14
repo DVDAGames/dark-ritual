@@ -272,10 +272,10 @@ shape = SubResource("RectangleShape2D_fit0w")
 
 [node name="Back" type="Area2D" parent="."]
 z_index = 1
-position = Vector2(-486, 263)
+position = Vector2(-416, 285)
 
 [node name="BackCollider" type="CollisionShape2D" parent="Back"]
-position = Vector2(70, 23)
+position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_ufjkh")
 
 [node name="HUD" type="Control" parent="."]
@@ -294,7 +294,6 @@ offset_bottom = 315.0
 text = "Rituals Left: 0"
 
 [node name="Tooltip" type="Label" parent="HUD"]
-visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -276.0

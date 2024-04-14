@@ -1,11 +1,11 @@
 [gd_scene load_steps=18 format=3 uid="uid://by1cm8qtfbh2w"]
 
-[ext_resource type="Script" path="res://scenes/level-three.gd" id="1_1qath"]
+[ext_resource type="Script" path="res://scripts/level-three.gd" id="1_1qath"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_vhbj3"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_hyvrs"]
 [ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="8_vwgmw"]
 [ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="15_f60ji"]
-[ext_resource type="Script" path="res://scenes/Brazier.gd" id="19_kkh8j"]
+[ext_resource type="Script" path="res://scripts/Brazier.gd" id="19_kkh8j"]
 [ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="20_twtmx"]
 [ext_resource type="Texture2D" uid="uid://cvfuyop76xdqw" path="res://sprites/brazier_lit.png" id="21_ni3g5"]
 

@@ -8,12 +8,10 @@ func _input(event):
 
 
 func _ready():
-  Globals.currentLevel = 3
+  Globals.currentLevel = 4
   Globals.levelStartingHealth = Globals.currentHealth
   Globals.levelStartingKeys = Globals.keys
   Globals.levelStartingItems = Globals.currentItems
-  Globals.currentStep = 2
+  Globals.currentStep = 0
 
-  ## TODO: REVERT
-  Globals.currentItems.append("fire_amulet")
   $Player.startPosition()
