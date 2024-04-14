@@ -4,6 +4,7 @@ extends Area2D
 @export var isLit = false
 
 @onready var tooltip := get_node("../HUD/Tooltip")
+@onready var Player := get_node("../Player")
 
 func hit_by_firebolt():
   if not isLit:
@@ -13,6 +14,8 @@ func hit_by_firebolt():
     isLit = true
 
     if Globals.currentLevel == 3:
+      Globals.LevelPositions[Globals.currentLevel] = Player.position
+
       if Globals.currentStep == 0:
         get_tree().change_scene_to_file("res://scenes/level-three-pt2.tscn")
       elif Globals.currentStep == 1:
@@ -25,8 +28,13 @@ func _on_area_entered(area):
     area.queue_free()
 
   elif not isLit:
-    tooltip.set_text("An unlit brazier.")
-    tooltip.visible = true
+    if Globals.currentLevel == 3:
+      if Globals.currentStep < 1:
+        tooltip.set_text("An unlit brazier.")
+        tooltip.visible = true
+    else:
+      tooltip.set_text("An unlit brazier.")
+      tooltip.visible = true
 
 func _on_area_exited(_area):
   if tooltip.visible:

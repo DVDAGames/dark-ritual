@@ -1,26 +1,26 @@
-[gd_scene load_steps=38 format=3 uid="uid://b3wy1phbgfw71"]
+[gd_scene load_steps=38 format=3 uid="uid://dlq5pdwspvbna"]
 
-[ext_resource type="Script" path="res://scenes/level-three-pt2.gd" id="1_hin7t"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="2_oy753"]
-[ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_2u7bs"]
-[ext_resource type="Texture2D" uid="uid://byh1o0djl175q" path="res://sprites/tile.png" id="8_j684v"]
-[ext_resource type="Texture2D" uid="uid://kekf11r0nbms" path="res://sprites/void.png" id="9_ar8o7"]
-[ext_resource type="Texture2D" uid="uid://c4h15up02mtdc" path="res://sprites/door_top.png" id="10_taxgk"]
-[ext_resource type="Texture2D" uid="uid://bgmh3lxhpgvlj" path="res://sprites/wall.png" id="11_7hiih"]
-[ext_resource type="Texture2D" uid="uid://dfrcnuib5cn1q" path="res://sprites/door_bottom.png" id="12_bu10d"]
-[ext_resource type="Texture2D" uid="uid://5v3fg8xp56em" path="res://sprites/door_left.png" id="13_t6vy0"]
-[ext_resource type="Texture2D" uid="uid://bb578y7xm8hbl" path="res://sprites/door_right.png" id="14_t2nx2"]
-[ext_resource type="Script" path="res://scenes/Brazier.gd" id="19_strgb"]
-[ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="20_8y3vb"]
-[ext_resource type="Texture2D" uid="uid://cvfuyop76xdqw" path="res://sprites/brazier_lit.png" id="21_fq1gg"]
-[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="22_iyho8"]
+[ext_resource type="Script" path="res://scenes/level-three-pt3.gd" id="1_kbkfs"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="2_vomm5"]
+[ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_qs4j4"]
+[ext_resource type="Texture2D" uid="uid://byh1o0djl175q" path="res://sprites/tile.png" id="8_1ygx8"]
+[ext_resource type="Texture2D" uid="uid://kekf11r0nbms" path="res://sprites/void.png" id="9_7prdy"]
+[ext_resource type="Texture2D" uid="uid://c4h15up02mtdc" path="res://sprites/door_top.png" id="10_rtyb3"]
+[ext_resource type="Texture2D" uid="uid://bgmh3lxhpgvlj" path="res://sprites/wall.png" id="11_7uipp"]
+[ext_resource type="Texture2D" uid="uid://dfrcnuib5cn1q" path="res://sprites/door_bottom.png" id="12_vgtb0"]
+[ext_resource type="Texture2D" uid="uid://5v3fg8xp56em" path="res://sprites/door_left.png" id="13_pwcrl"]
+[ext_resource type="Texture2D" uid="uid://bb578y7xm8hbl" path="res://sprites/door_right.png" id="14_c0ace"]
+[ext_resource type="Script" path="res://scenes/Brazier.gd" id="19_b2s6n"]
+[ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="20_448h2"]
+[ext_resource type="Texture2D" uid="uid://cvfuyop76xdqw" path="res://sprites/brazier_lit.png" id="21_lalab"]
+[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="22_t5pfv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1hp8"]
 radius = 19.0
 height = 110.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_373d7"]
-texture = ExtResource("8_j684v")
+texture = ExtResource("8_1ygx8")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -32,7 +32,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_2/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5nss"]
-texture = ExtResource("9_ar8o7")
+texture = ExtResource("9_7prdy")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -44,7 +44,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3f056"]
-texture = ExtResource("10_taxgk")
+texture = ExtResource("10_rtyb3")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -56,7 +56,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_2/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w32lx"]
-texture = ExtResource("11_7hiih")
+texture = ExtResource("11_7uipp")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -68,7 +68,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_2/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7o8x"]
-texture = ExtResource("12_bu10d")
+texture = ExtResource("12_vgtb0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -80,7 +80,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_2/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_geq6a"]
-texture = ExtResource("13_t6vy0")
+texture = ExtResource("13_pwcrl")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -92,7 +92,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_2/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p0l3"]
-texture = ExtResource("14_t2nx2")
+texture = ExtResource("14_c0ace")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -128,19 +128,19 @@ size = Vector2(56, 56)
 size = Vector2(58, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3urks"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmlra"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ii2a"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vxwyi"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o8jd"]
@@ -167,19 +167,19 @@ animations = [{
 size = Vector2(21, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ufag"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcrpw"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elfom"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8a60"]
-atlas = ExtResource("21_fq1gg")
+atlas = ExtResource("21_lalab")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dsrf6"]
@@ -205,9 +205,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8c3y"]
 size = Vector2(21, 22)
 
-[node name="LevelThreePt2" type="Node2D" groups=["unapusable"]]
+[node name="LevelThreePt3" type="Node2D" groups=["unapusable"]]
 position = Vector2(-1, 0)
-script = ExtResource("1_hin7t")
+script = ExtResource("1_kbkfs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)
@@ -220,10 +220,10 @@ position = Vector2(-480, 287)
 scale = Vector2(0.5, 0.5)
 collision_layer = 7
 collision_mask = 7
-script = ExtResource("2_oy753")
+script = ExtResource("2_vomm5")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_2u7bs")
+texture = ExtResource("3_qs4j4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_m1hp8")
@@ -242,7 +242,7 @@ layer_0/name = "Walls"
 layer_0/navigation_enabled = false
 layer_1/name = "Platforms"
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 262140, 0, 0, 196604, 0, 0, 196603, 0, 0, 196602, 0, 0, 196601, 0, 0, 196600, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, -262150, 0, 0, -196614, 0, 0, -196613, 0, 0, -262151, 0, 0, -262152, 0, 0, -196616, 0, 0, -196615, 0, 0, -131080, 0, 0, -131079, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, -65532, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -65534, 0, 0, -65533, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 327672, 7, 0, -262149, 10, 0, 131065, 0, 0, 65529, 0, 0)
+layer_1/tile_data = PackedInt32Array(327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 262140, 0, 0, 196604, 0, 0, 196603, 0, 0, 196602, 0, 0, 196601, 0, 0, 196600, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, -262150, 0, 0, -196614, 0, 0, -196613, 0, 0, -262151, 0, 0, -262152, 0, 0, -196616, 0, 0, -196615, 0, 0, -131080, 0, 0, -131079, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, -65532, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -65534, 0, 0, -65533, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 327672, 7, 0, -262149, 10, 0, 131065, 0, 0, 65529, 0, 0, -7, 0, 0, -65543, 0, 0)
 layer_2/name = "Void"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-327690, 2, 0, -262154, 2, 0, -196618, 2, 0, -10, 2, 0, 65526, 2, 0, 131062, 2, 0, 196598, 2, 0, 262134, 2, 0, 327670, 2, 0, 393206, 2, 0, 327689, 2, 0, 393207, 2, 0, 393208, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 262153, 2, 0, 196617, 2, 0, 131081, 2, 0, 65545, 2, 0, 9, 2, 0, -65527, 2, 0, -131063, 2, 0, -196599, 2, 0, -262135, 2, 0, -327671, 2, 0, -393207, 2, 0, -393208, 2, 0, -393209, 2, 0, -393210, 2, 0, -393211, 2, 0, -393212, 2, 0, -393213, 2, 0, -393214, 2, 0, -393215, 2, 0, -393216, 2, 0, -327681, 2, 0, -327682, 2, 0, -327683, 2, 0, -327684, 2, 0, -327685, 2, 0, -327686, 2, 0, -327687, 2, 0, -327688, 2, 0, -327689, 2, 0, -131082, 2, 0, -65546, 2, 0, 327671, 1, 0, 262135, 1, 0, 196599, 1, 0, 131063, 1, 0, 65527, 1, 0, -9, 1, 0, -65545, 1, 0, -131081, 1, 0, -196617, 1, 0, -262153, 1, 0, -65544, 1, 0, -8, 1, 0, 65528, 1, 0, 131064, 1, 0, 131066, 1, 0, 65530, 1, 0, -6, 1, 0, -65542, 1, 0, -131078, 1, 0, -131077, 1, 0, -65541, 1, 0, -5, 1, 0, 65531, 1, 0, 131067, 1, 0, 131068, 1, 0, 65532, 1, 0, -4, 1, 0, -65540, 1, 0, -131076, 1, 0, -196612, 1, 0, -262148, 1, 0, -262147, 1, 0, -196611, 1, 0, -131075, 1, 0, -65539, 1, 0, -3, 1, 0, 65533, 1, 0, 131069, 1, 0, 196605, 1, 0, 262141, 1, 0, 327677, 1, 0, 327678, 1, 0, 262142, 1, 0, 196606, 1, 0, 131070, 1, 0, 65534, 1, 0, -2, 1, 0, -65538, 1, 0, -131074, 1, 0, -196610, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -327672, 1, 0, -262136, 1, 0, -196600, 1, 0, -131064, 1, 0, -65528, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 262151, 1, 0, 262150, 1, 0, 262149, 1, 0, 262148, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 262144, 1, 0, 327679, 1, 0, 262143, 1, 0, 196607, 1, 0, 131071, 1, 0, 65535, 1, 0, -1, 1, 0, -65537, 1, 0, -131073, 1, 0, -196609, 1, 0, -262144, 1, 0, -262143, 1, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0, -262137, 1, 0, -196601, 1, 0, -131065, 1, 0, -65529, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 196614, 1, 0, 196613, 1, 0, 196612, 1, 0, 196611, 1, 0, 196610, 1, 0, 196609, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 0, 1, 0, -65536, 1, 0, -131072, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -131066, 1, 0, -65530, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 131077, 1, 0, 65541, 1, 0, 5, 1, 0, -65531, 1, 0, -131067, 1, 0, -131071, 1, 0, -65535, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, -65543, 1, 0, -7, 1, 0, 65529, 1, 0, 131065, 1, 0)
@@ -270,15 +270,15 @@ z_index = 2
 position = Vector2(-351, 225)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("19_strgb")
+script = ExtResource("19_b2s6n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier"]
 visible = false
-texture = ExtResource("20_8y3vb")
+texture = ExtResource("20_448h2")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier"]
 sprite_frames = SubResource("SpriteFrames_8o8jd")
-frame_progress = 0.954847
+frame_progress = 0.457549
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier"]
 position = Vector2(0.5, 3)
@@ -307,7 +307,7 @@ offset_left = 363.0
 offset_top = 130.0
 offset_right = 792.0
 offset_bottom = 199.0
-theme = ExtResource("22_iyho8")
+theme = ExtResource("22_t5pfv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -326,14 +326,15 @@ z_index = 2
 position = Vector2(225, 32)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("19_strgb")
+script = ExtResource("19_b2s6n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier2"]
-texture = ExtResource("20_8y3vb")
+visible = false
+texture = ExtResource("20_448h2")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier2"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_dsrf6")
+frame_progress = 0.646161
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier2"]
 position = Vector2(0.5, 3)

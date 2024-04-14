@@ -1,17 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://by1cm8qtfbh2w"]
+[gd_scene load_steps=18 format=3 uid="uid://by1cm8qtfbh2w"]
 
 [ext_resource type="Script" path="res://scenes/level-three.gd" id="1_1qath"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_vhbj3"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_hyvrs"]
-[ext_resource type="Script" path="res://scripts/RitualCircle.gd" id="4_rimpw"]
-[ext_resource type="Texture2D" uid="uid://cgktvj01rvd0j" path="res://sprites/ward.png" id="5_cubmb"]
-[ext_resource type="Script" path="res://scripts/Flame.gd" id="6_lmlkl"]
-[ext_resource type="Texture2D" uid="uid://cphfeucx3ai4u" path="res://sprites/flame.png" id="7_r53iq"]
 [ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="8_vwgmw"]
-[ext_resource type="Script" path="res://scripts/Chest.gd" id="11_m2o7p"]
-[ext_resource type="Texture2D" uid="uid://v0ckb1tf3en0" path="res://sprites/chest.png" id="12_oehms"]
-[ext_resource type="Script" path="res://scripts/Potion.gd" id="13_3sg4u"]
-[ext_resource type="Texture2D" uid="uid://dclixwb4er7or" path="res://sprites/potion.png" id="14_sl0fh"]
 [ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="15_f60ji"]
 [ext_resource type="Script" path="res://scenes/Brazier.gd" id="19_kkh8j"]
 [ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="20_twtmx"]
@@ -20,19 +12,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1hp8"]
 radius = 19.0
 height = 110.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ib8rc"]
-radius = 18.9737
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cncxb"]
-radius = 7.0
-height = 22.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m164k"]
-size = Vector2(46, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeni6"]
-size = Vector2(42, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fit0w"]
 size = Vector2(56, 56)
@@ -109,35 +88,6 @@ position = Vector2(40, 0)
 
 [node name="FireboltCooldown" type="Timer" parent="Player"]
 
-[node name="RitualCircle" type="Area2D" parent="." groups=["rituals"]]
-visible = false
-z_index = 2
-position = Vector2(-31, -225)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("4_rimpw")
-
-[node name="Sprite2D" type="Sprite2D" parent="RitualCircle"]
-texture = ExtResource("5_cubmb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle"]
-shape = SubResource("CircleShape2D_ib8rc")
-
-[node name="Flame" type="Area2D" parent="." groups=["flames"]]
-visible = false
-z_index = 2
-position = Vector2(-28, 165)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("6_lmlkl")
-
-[node name="Sprite2D" type="Sprite2D" parent="Flame"]
-texture = ExtResource("7_r53iq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame"]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_cncxb")
-
 [node name="Map" type="TileMap" parent="."]
 tile_set = ExtResource("8_vwgmw")
 format = 2
@@ -149,38 +99,6 @@ layer_1/tile_data = PackedInt32Array(327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 3
 layer_2/name = "Void"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-327690, 2, 0, -262154, 2, 0, -196618, 2, 0, -10, 2, 0, 65526, 2, 0, 131062, 2, 0, 196598, 2, 0, 262134, 2, 0, 327670, 2, 0, 393206, 2, 0, 327689, 2, 0, 393207, 2, 0, 393208, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 262153, 2, 0, 196617, 2, 0, 131081, 2, 0, 65545, 2, 0, 9, 2, 0, -65527, 2, 0, -131063, 2, 0, -196599, 2, 0, -262135, 2, 0, -327671, 2, 0, -393207, 2, 0, -393208, 2, 0, -393209, 2, 0, -393210, 2, 0, -393211, 2, 0, -393212, 2, 0, -393213, 2, 0, -393214, 2, 0, -393215, 2, 0, -393216, 2, 0, -327681, 2, 0, -327682, 2, 0, -327683, 2, 0, -327684, 2, 0, -327685, 2, 0, -327686, 2, 0, -327687, 2, 0, -327688, 2, 0, -327689, 2, 0, -131082, 2, 0, -65546, 2, 0, 327671, 1, 0, 262135, 1, 0, 196599, 1, 0, 131063, 1, 0, 65527, 1, 0, -9, 1, 0, -65545, 1, 0, -131081, 1, 0, -196617, 1, 0, -262153, 1, 0, -65544, 1, 0, -8, 1, 0, 65528, 1, 0, 131064, 1, 0, 131066, 1, 0, 65530, 1, 0, -6, 1, 0, -65542, 1, 0, -131078, 1, 0, -131077, 1, 0, -65541, 1, 0, -5, 1, 0, 65531, 1, 0, 131067, 1, 0, 131068, 1, 0, 65532, 1, 0, -4, 1, 0, -65540, 1, 0, -131076, 1, 0, -196612, 1, 0, -262148, 1, 0, -262147, 1, 0, -196611, 1, 0, -131075, 1, 0, -65539, 1, 0, -3, 1, 0, 65533, 1, 0, 131069, 1, 0, 196605, 1, 0, 262141, 1, 0, 327677, 1, 0, 327678, 1, 0, 262142, 1, 0, 196606, 1, 0, 131070, 1, 0, 65534, 1, 0, -2, 1, 0, -65538, 1, 0, -131074, 1, 0, -196610, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -327672, 1, 0, -262136, 1, 0, -196600, 1, 0, -131064, 1, 0, -65528, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 262151, 1, 0, 262150, 1, 0, 262149, 1, 0, 262148, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 262144, 1, 0, 327679, 1, 0, 262143, 1, 0, 196607, 1, 0, 131071, 1, 0, 65535, 1, 0, -1, 1, 0, -65537, 1, 0, -131073, 1, 0, -196609, 1, 0, -262144, 1, 0, -262143, 1, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0, -262137, 1, 0, -196601, 1, 0, -131065, 1, 0, -65529, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 196614, 1, 0, 196613, 1, 0, 196612, 1, 0, 196611, 1, 0, 196610, 1, 0, 196609, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 0, 1, 0, -65536, 1, 0, -131072, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -131066, 1, 0, -65530, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 131077, 1, 0, 65541, 1, 0, 5, 1, 0, -65531, 1, 0, -131067, 1, 0, -131071, 1, 0, -65535, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, -65543, 1, 0, -7, 1, 0, 65529, 1, 0, 131065, 1, 0)
-
-[node name="Chest" type="Area2D" parent="." groups=["chests"]]
-visible = false
-light_mask = 2
-visibility_layer = 2
-z_index = 2
-position = Vector2(-480, 224)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("11_m2o7p")
-
-[node name="Sprite2D" type="Sprite2D" parent="Chest"]
-texture = ExtResource("12_oehms")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_m164k")
-
-[node name="Potion" type="Area2D" parent="." groups=["potions"]]
-visible = false
-z_index = 2
-position = Vector2(545, -288)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("13_3sg4u")
-
-[node name="Sprite2D" type="Sprite2D" parent="Potion"]
-texture = ExtResource("14_sl0fh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion"]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_jeni6")
 
 [node name="Goal" type="Area2D" parent="."]
 z_index = 1
@@ -213,7 +131,7 @@ texture = ExtResource("20_twtmx")
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_8o8jd")
-frame_progress = 0.0875261
+frame_progress = 0.384446
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier"]
 position = Vector2(0.5, 3)
@@ -255,14 +173,6 @@ offset_bottom = 642.0
 text = "Keys: 0"
 
 [connection signal="timeout" from="Player/FireboltCooldown" to="Player" method="_on_firebolt_cooldown_timeout"]
-[connection signal="area_entered" from="RitualCircle" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(0, 1)]]
-[connection signal="area_exited" from="RitualCircle" to="Player" method="_on_ritual_circle_area_exited"]
-[connection signal="area_entered" from="Flame" to="Player" method="_on_flame_area_entered" binds= [Vector2(0, 1)]]
-[connection signal="area_exited" from="Flame" to="Player" method="_on_flame_area_exited"]
-[connection signal="area_entered" from="Chest" to="Player" method="_on_chest_area_entered" binds= ["fire_amulet"]]
-[connection signal="area_exited" from="Chest" to="Player" method="_on_chest_area_exited"]
-[connection signal="area_entered" from="Potion" to="Player" method="_on_potion_area_entered"]
-[connection signal="area_exited" from="Potion" to="Player" method="_on_potion_area_exited"]
 [connection signal="area_entered" from="Goal" to="Player" method="_on_goal_area_entered"]
 [connection signal="area_exited" from="Goal" to="Player" method="_on_goal_area_exited"]
 [connection signal="area_entered" from="Back" to="Player" method="_on_back_area_entered"]
