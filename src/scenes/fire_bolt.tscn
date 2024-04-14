@@ -36,9 +36,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Firebolt" type="Area2D"]
-light_mask = 15
-visibility_layer = 15
+[node name="Firebolt" type="Area2D" groups=["firebolts"]]
+light_mask = 14
+visibility_layer = 14
 z_index = 4
 scale = Vector2(0.5, 0.5)
 collision_layer = 14

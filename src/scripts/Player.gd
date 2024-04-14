@@ -18,7 +18,8 @@ enum forms {
 var action := ""
 var actionMovement := Vector2(0,0)
 var actionItem := ""
-var canCastFirebolt:= false
+# TODO: REVERT AFTER TESTING
+var canCastFirebolt:= true
 
 @export var Firebolt: PackedScene = preload("res://scenes/fire_bolt.tscn")
 
@@ -182,9 +183,6 @@ func useAction():
       get_tree().call_group("chests", "exit_interactive_mode")
     elif Globals.currentItems.has("fire_amulet") and canCastFirebolt:
       castFirebolt()
-    else:
-      print(Globals.currentItems)
-      print(canCastFirebolt)
 
 
     # MOVE IF NECESSARY
@@ -199,8 +197,13 @@ func useAction():
 
 func castFirebolt():
   canCastFirebolt = false
+
   var firebolt = Firebolt.instantiate()
+
+  firebolt.add_to_group("firebolts")
+
   owner.add_child(firebolt)
+
   firebolt.position = $Caster.position
   firebolt.transform = $Caster.transform
   $FireboltCooldown.start()
@@ -272,7 +275,7 @@ func _on_back_area_exited(_area):
   actionMovement = Vector2(0,0)
 
 
-func _on_key_area_entered(area):
+func _on_key_area_entered(_area):
   tooltip.set_text("Press SPACEBAR to pick up the key.")
   tooltip.visible = true
 
@@ -280,7 +283,7 @@ func _on_key_area_entered(area):
   actionMovement = Vector2(0,0)
 
 
-func _on_key_area_exited(area):
+func _on_key_area_exited(_area):
   tooltip.visible = false
   tooltip.set_text("")
 
@@ -288,7 +291,7 @@ func _on_key_area_exited(area):
   actionMovement = Vector2(0,0)
 
 
-func _on_potion_area_entered(area):
+func _on_potion_area_entered(_area):
   if Globals.currentHealth < 3:
     tooltip.set_text("Press SPACEBAR to drink the blood potion.")
     tooltip.visible = true
@@ -297,7 +300,7 @@ func _on_potion_area_entered(area):
     actionMovement = Vector2(0,0)
 
 
-func _on_potion_area_exited(area):
+func _on_potion_area_exited(_area):
   tooltip.visible = false
   tooltip.set_text("")
 
@@ -305,7 +308,7 @@ func _on_potion_area_exited(area):
   actionMovement = Vector2(0,0)
 
 
-func _on_chest_area_entered(area, item):
+func _on_chest_area_entered(_area, item):
   if Globals.keys > 0:
     tooltip.set_text("Press SPACEBAR to unlock the chest.")
     tooltip.visible = true
@@ -318,7 +321,7 @@ func _on_chest_area_entered(area, item):
     tooltip.visible = true
 
 
-func _on_chest_area_exited(area):
+func _on_chest_area_exited(_area):
   tooltip.visible = false
   tooltip.set_text("")
 

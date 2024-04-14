@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cd1ulygu81jfp"]
+[gd_scene load_steps=21 format=3 uid="uid://cd1ulygu81jfp"]
 
 [ext_resource type="Script" path="res://scripts/level-two.gd" id="1_d64uk"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_yopyf"]
@@ -7,9 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgktvj01rvd0j" path="res://sprites/ward.png" id="5_5cm04"]
 [ext_resource type="Script" path="res://scripts/Flame.gd" id="6_rqlp1"]
 [ext_resource type="Texture2D" uid="uid://cphfeucx3ai4u" path="res://sprites/flame.png" id="7_qtobr"]
-[ext_resource type="Texture2D" uid="uid://byh1o0djl175q" path="res://sprites/tile.png" id="8_0onqb"]
-[ext_resource type="Texture2D" uid="uid://kekf11r0nbms" path="res://sprites/void.png" id="9_tcrrc"]
-[ext_resource type="Texture2D" uid="uid://bgmh3lxhpgvlj" path="res://sprites/wall.png" id="10_vocc2"]
+[ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="8_5fdop"]
 [ext_resource type="Script" path="res://scripts/Chest.gd" id="11_d04lm"]
 [ext_resource type="Script" path="res://scripts/Potion.gd" id="11_g7q7m"]
 [ext_resource type="Texture2D" uid="uid://dclixwb4er7or" path="res://sprites/potion.png" id="11_hdq1k"]
@@ -26,56 +24,6 @@ radius = 18.9737
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cncxb"]
 radius = 7.0
 height = 22.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_373d7"]
-texture = ExtResource("8_0onqb")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_1/angular_velocity = 0.0
-0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_2/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5nss"]
-texture = ExtResource("9_tcrrc")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_1/angular_velocity = 0.0
-0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_2/angular_velocity = 0.0
-0:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w32lx"]
-texture = ExtResource("10_vocc2")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_1/angular_velocity = 0.0
-0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_2/angular_velocity = 0.0
-
-[sub_resource type="TileSet" id="TileSet_6610i"]
-tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
-physics_layer_1/collision_layer = 2
-physics_layer_1/collision_mask = 2
-physics_layer_2/collision_layer = 4
-physics_layer_2/collision_mask = 4
-navigation_layer_0/layers = 1
-navigation_layer_1/layers = 2
-navigation_layer_2/layers = 4
-sources/0 = SubResource("TileSetAtlasSource_373d7")
-sources/1 = SubResource("TileSetAtlasSource_t5nss")
-sources/2 = SubResource("TileSetAtlasSource_w32lx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m164k"]
 size = Vector2(46, 28)
@@ -147,13 +95,13 @@ position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_cncxb")
 
 [node name="Map" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_6610i")
+tile_set = ExtResource("8_5fdop")
 format = 2
 layer_0/name = "Walls"
 layer_0/navigation_enabled = false
 layer_1/name = "Platforms"
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(-196617, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -262136, 0, 0, -196600, 0, 0, -196601, 0, 0, -196602, 0, 0, -262137, 0, 0, 196599, 0, 0, 262135, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 262137, 0, 0, 196601, 0, 0, 196600, 0, 0, 262136, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0)
+layer_1/tile_data = PackedInt32Array(-196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -262136, 0, 0, -196600, 0, 0, -196601, 0, 0, -196602, 0, 0, -262137, 0, 0, 196599, 0, 0, 262135, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 262137, 0, 0, 196601, 0, 0, 196600, 0, 0, 262136, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, -196617, 3, 0, 196616, 4, 0)
 layer_2/name = "Void"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-327690, 2, 0, -262154, 2, 0, -196618, 2, 0, -10, 2, 0, 65526, 2, 0, 131062, 2, 0, 196598, 2, 0, 262134, 2, 0, 327670, 2, 0, 393206, 2, 0, 327689, 2, 0, 393207, 2, 0, 393208, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 262153, 2, 0, 196617, 2, 0, 131081, 2, 0, 65545, 2, 0, 9, 2, 0, -65527, 2, 0, -131063, 2, 0, -196599, 2, 0, -262135, 2, 0, -327671, 2, 0, -393207, 2, 0, -393208, 2, 0, -393209, 2, 0, -393210, 2, 0, -393211, 2, 0, -393212, 2, 0, -393213, 2, 0, -393214, 2, 0, -393215, 2, 0, -393216, 2, 0, -327681, 2, 0, -327682, 2, 0, -327683, 2, 0, -327684, 2, 0, -327685, 2, 0, -327686, 2, 0, -327687, 2, 0, -327688, 2, 0, -327689, 2, 0, -131082, 2, 0, -65546, 2, 0, -262153, 1, 0, -262152, 1, 0, -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -262148, 1, 0, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -196603, 1, 0, -196604, 1, 0, -196605, 1, 0, -196606, 1, 0, -196607, 1, 0, -196608, 1, 0, -131073, 1, 0, -131074, 1, 0, -131075, 1, 0, -131076, 1, 0, -131077, 1, 0, -131078, 1, 0, -131079, 1, 0, -131080, 1, 0, -131081, 1, 0, -65545, 1, 0, -9, 1, 0, 65527, 1, 0, 131063, 1, 0, 131064, 1, 0, 131065, 1, 0, 131066, 1, 0, 196602, 1, 0, 65530, 1, 0, -6, 1, 0, -65542, 1, 0, -65543, 1, 0, -65544, 1, 0, -8, 1, 0, 65528, 1, 0, -7, 1, 0, 65529, 1, 0, 196603, 1, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 327674, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 8, 1, 0, -65528, 1, 0, -131064, 1, 0, -131065, 1, 0, -131066, 1, 0, -131067, 1, 0, -65531, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, -65529, 1, 0, -65530, 1, 0, -131068, 1, 0, -131069, 1, 0, -131070, 1, 0, -131071, 1, 0, -131072, 1, 0, -65537, 1, 0, -65538, 1, 0, -65539, 1, 0, -65540, 1, 0, -65541, 1, 0, -5, 1, 0, -4, 1, 0, -3, 1, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 0, 65532, 1, 0, 65531, 1, 0)
