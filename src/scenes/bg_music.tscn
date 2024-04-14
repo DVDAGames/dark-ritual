@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdo6yfwm2mpeo"]
+
+[ext_resource type="AudioStream" uid="uid://d1duun2v2hde3" path="res://sounds/dark-ritual.wav" id="1_tto40"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_tto40")
+autoplay = true
+
+[connection signal="finished" from="." to="." method="_on_finished"]
