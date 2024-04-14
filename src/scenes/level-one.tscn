@@ -215,6 +215,8 @@ stream = ExtResource("10_2cti0")
 script = ExtResource("11_hns40")
 
 [node name="BGMusicTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
 [node name="Goal" type="Area2D" parent="."]
 z_index = 1
