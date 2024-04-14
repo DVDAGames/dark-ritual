@@ -23,6 +23,8 @@ var actionMovement := Vector2(0,0)
 @onready var currentForm := forms.CLERIC
 @onready var ray := $RayCast2D
 @onready var tileMapNode := get_node("../Map")
+@onready var ritualCircle := get_node("../RitualCircle")
+@onready var flame := get_node("../Flame")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -77,6 +79,9 @@ func swap(form):
     ray.set_collision_mask_value(Globals.Layers.PLATFORMS, false)
 
     currentForm = forms.GHOST
+
+    flame.visible = true
+    ritualCircle.visible = false
   else:
     $PlayerSprite.set_texture(clericTexture)
 
@@ -85,6 +90,9 @@ func swap(form):
     ray.set_collision_mask_value(Globals.Layers.PLATFORMS, true)
 
     currentForm = forms.CLERIC
+
+    flame.visible = false
+    ritualCircle.visible = true
 
 
 func move(direction):
