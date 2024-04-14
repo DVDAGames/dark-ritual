@@ -40,6 +40,13 @@ func _ready():
   # swapping the model to the Cleric model fixes the collision detection
   swap(forms.GHOST)
 
+func startPosition():
+  # try to put player back at last position in scene
+  if not Globals.LevelPositions.is_empty() and Globals.LevelPositions[Globals.currentLevel] != Vector2(0,0):
+    position = Globals.LevelPositions[Globals.currentLevel]
+  else:
+    Globals.LevelPositions[Globals.currentLevel] = position
+
 func _unhandled_input(event):
   if event.is_action_pressed("ui_swap"):
     # swap sprite
@@ -80,8 +87,8 @@ func swap(form):
 
     currentForm = forms.GHOST
 
-    flame.visible = true
-    ritualCircle.visible = false
+    get_tree().call_group("flames", "enter_interactive_mode")
+    get_tree().call_group("rituals", "exit_interactive_mode")
   else:
     $PlayerSprite.set_texture(clericTexture)
 
@@ -91,8 +98,8 @@ func swap(form):
 
     currentForm = forms.CLERIC
 
-    flame.visible = false
-    ritualCircle.visible = true
+    get_tree().call_group("flames", "exit_interactive_mode")
+    get_tree().call_group("rituals", "enter_interactive_mode")
 
 
 func move(direction):
@@ -110,6 +117,11 @@ func canMove(direction):
 func useAction():
     if action == "swap":
       swap(currentForm)
+    elif action == "next":
+      Globals.LevelPositions[Globals.currentLevel] = position
+      get_tree().change_scene_to_file(Globals.Levels[Globals.currentLevel + 1])
+    elif action == "back":
+      get_tree().change_scene_to_file(Globals.Levels[Globals.currentLevel - 1])
 
     if actionMovement != null:
       position += actionMovement * tileSize
@@ -129,3 +141,13 @@ func _on_flame_area_entered(area, direction):
   if currentForm == forms.GHOST:
     action = "swap"
     actionMovement = direction
+
+
+func _on_goal_area_entered(area):
+  action = "next"
+  actionMovement = Vector2(0,0)
+
+
+func _on_back_area_entered(area):
+  action = "back"
+  actionMovement = Vector2(0,0)

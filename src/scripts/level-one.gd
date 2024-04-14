@@ -8,8 +8,9 @@ func _input(event):
     get_tree().quit()
 
 func _ready():
-  Globals.currentLevel = 0
+  Globals.currentLevel = 1
   $Player.startPosition()
+
 
 func _on_audio_stream_player_finished():
   $BGMusic.play()
