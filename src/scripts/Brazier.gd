@@ -21,6 +21,8 @@ func hit_by_firebolt():
 
     isLit = true
 
+    add_to_group("lit_braziers")
+
     if Globals.currentLevel == 3:
       Globals.LevelPositions[Globals.currentLevel] = Player.position
 
@@ -33,7 +35,9 @@ func hit_by_firebolt():
 
       if Globals.currentStep == 0:
         get_tree().change_scene_to_file("res://scenes/level-four-pt2.tscn")
-
+    elif Globals.currentLevel == 8:
+      if get_tree().get_nodes_in_group("lit_braziers").size() == 8:
+        get_tree().change_scene_to_file("res://scenes/level-eight-pt2.tscn")
 
 func _on_area_entered(area):
   if area.is_in_group("firebolts"):

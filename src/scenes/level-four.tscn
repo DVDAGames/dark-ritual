@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bkqc2wbj21rkw"]
+[gd_scene load_steps=27 format=3 uid="uid://bkqc2wbj21rkw"]
 
 [ext_resource type="Script" path="res://scripts/level-four.gd" id="1_fplas"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_77k7t"]
@@ -10,8 +10,6 @@
 [ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="8_tsb0n"]
 [ext_resource type="Script" path="res://scripts/Chest.gd" id="9_22exu"]
 [ext_resource type="Texture2D" uid="uid://v0ckb1tf3en0" path="res://sprites/chest.png" id="10_34j6p"]
-[ext_resource type="Script" path="res://scripts/Potion.gd" id="11_adj3e"]
-[ext_resource type="Texture2D" uid="uid://dclixwb4er7or" path="res://sprites/potion.png" id="12_ryudg"]
 [ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="13_pqbjd"]
 [ext_resource type="Script" path="res://scripts/Brazier.gd" id="14_7is68"]
 [ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="15_0rwn8"]
@@ -31,28 +29,25 @@ height = 22.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m164k"]
 size = Vector2(46, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeni6"]
-size = Vector2(42, 30)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fit0w"]
 size = Vector2(56, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufjkh"]
 size = Vector2(58, 62)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ufag"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqhis"]
 atlas = ExtResource("16_etwov")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wcrpw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xxtp"]
 atlas = ExtResource("16_etwov")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_elfom"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_chvnl"]
 atlas = ExtResource("16_etwov")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j8a60"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1vxv"]
 atlas = ExtResource("16_etwov")
 region = Rect2(192, 0, 64, 64)
 
@@ -60,16 +55,16 @@ region = Rect2(192, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ufag")
+"texture": SubResource("AtlasTexture_jqhis")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wcrpw")
+"texture": SubResource("AtlasTexture_4xxtp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_elfom")
+"texture": SubResource("AtlasTexture_chvnl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j8a60")
+"texture": SubResource("AtlasTexture_j1vxv")
 }],
 "loop": true,
 "name": &"default",
@@ -177,21 +172,6 @@ texture = ExtResource("10_34j6p")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_m164k")
 
-[node name="Potion" type="Area2D" parent="." groups=["potions"]]
-visible = false
-z_index = 2
-position = Vector2(545, -288)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("11_adj3e")
-
-[node name="Sprite2D" type="Sprite2D" parent="Potion"]
-texture = ExtResource("12_ryudg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion"]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_jeni6")
-
 [node name="Goal" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(-554, 143)
@@ -272,8 +252,6 @@ shape = SubResource("RectangleShape2D_ciixq")
 [connection signal="area_exited" from="Flame" to="Player" method="_on_flame_area_exited"]
 [connection signal="area_entered" from="Chest" to="Player" method="_on_chest_area_entered" binds= ["unholy_flame"]]
 [connection signal="area_exited" from="Chest" to="Player" method="_on_chest_area_exited"]
-[connection signal="area_entered" from="Potion" to="Player" method="_on_potion_area_entered"]
-[connection signal="area_exited" from="Potion" to="Player" method="_on_potion_area_exited"]
 [connection signal="area_entered" from="Goal" to="Player" method="_on_goal_area_entered"]
 [connection signal="area_exited" from="Goal" to="Player" method="_on_goal_area_exited"]
 [connection signal="area_entered" from="Back" to="Player" method="_on_back_area_entered"]
