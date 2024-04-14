@@ -41,11 +41,11 @@ func _ready():
 
   # HACK: for some reason the intial player state can clip through the walls and into the void
   # swapping the model to the Cleric model fixes the collision detection
-  if Globals.currentLevel == 5:
-    print('GHOST')
+  if Globals.currentLevel == 5 or Globals.currentLevel == 6 or Globals.currentLevel == 7:
     currentForm = forms.GHOST
     swap(forms.CLERIC, true)
   else:
+    currentForm = forms.CLERIC
     swap(forms.GHOST, true)
 
   $Caster.transform = Transform2D(0.0, position)
@@ -192,6 +192,8 @@ func useAction():
       elif Globals.currentLevel == 5:
         Globals.LevelPositions[Globals.currentLevel] = position
         get_tree().change_scene_to_file("res://scenes/level-six.tscn")
+      elif Globals.currentLevel == 6:
+        get_tree().change_scene_to_file("res://scenes/level-seven.tscn")
     elif action == "ritual":
       get_tree().call_group("braziers", "ignite")
 

@@ -17,17 +17,21 @@ static var Levels := [
   "res://scenes/level-three.tscn",
   "res://scenes/level-four.tscn",
   "res://scenes/level-five.tscn",
-  "res://scenes/level-six.tscn"
+  "res://scenes/level-six.tscn",
+  "res://scenes/level-seven.tscn",
+  "res://scenes/level-eight.tscn"
 ]
 
 static var LevelSteps: Array[int] = [
-  0,
-  0,
-  0,
-  2,
-  1,
-  0,
-  1,
+  0, # demo
+  0, # one
+  0, # two
+  2, # three
+  1, # four
+  0, # fixe
+  0, # six
+  0, #seven
+  0 # eight
 ]
 
 static var Items := {
@@ -41,6 +45,8 @@ static var ItemDescriptions := {
 }
 
 static var LevelPositions:Array[Vector2] = [
+  Vector2(0,0),
+  Vector2(0,0),
   Vector2(0,0),
   Vector2(0,0),
   Vector2(0,0),

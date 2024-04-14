@@ -1,18 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://cd1ulygu81jfp"]
+[gd_scene load_steps=21 format=3 uid="uid://dvj3llr2327qf"]
 
-[ext_resource type="Script" path="res://scripts/level-two.gd" id="1_d64uk"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="2_yopyf"]
-[ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_dxm87"]
-[ext_resource type="Script" path="res://scripts/RitualCircle.gd" id="4_gvw5g"]
-[ext_resource type="Texture2D" uid="uid://cgktvj01rvd0j" path="res://sprites/ward.png" id="5_5cm04"]
-[ext_resource type="Script" path="res://scripts/Flame.gd" id="6_rqlp1"]
-[ext_resource type="Texture2D" uid="uid://cphfeucx3ai4u" path="res://sprites/flame.png" id="7_qtobr"]
-[ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="8_5fdop"]
-[ext_resource type="Script" path="res://scripts/Chest.gd" id="11_d04lm"]
-[ext_resource type="Script" path="res://scripts/Potion.gd" id="11_g7q7m"]
-[ext_resource type="Texture2D" uid="uid://dclixwb4er7or" path="res://sprites/potion.png" id="11_hdq1k"]
-[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="13_nos5s"]
-[ext_resource type="Texture2D" uid="uid://v0ckb1tf3en0" path="res://sprites/chest.png" id="16_y7q0s"]
+[ext_resource type="Script" path="res://scenes/level-eight.gd" id="1_jr2ew"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="2_6da65"]
+[ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_uqb2w"]
+[ext_resource type="Script" path="res://scripts/RitualCircle.gd" id="4_rv58h"]
+[ext_resource type="Texture2D" uid="uid://cgktvj01rvd0j" path="res://sprites/ward.png" id="5_65tpu"]
+[ext_resource type="Script" path="res://scripts/Flame.gd" id="6_cfoyn"]
+[ext_resource type="Texture2D" uid="uid://cphfeucx3ai4u" path="res://sprites/flame.png" id="7_upxq1"]
+[ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="8_ohgmr"]
+[ext_resource type="Script" path="res://scripts/Chest.gd" id="9_px6fc"]
+[ext_resource type="Texture2D" uid="uid://v0ckb1tf3en0" path="res://sprites/chest.png" id="10_uk2lx"]
+[ext_resource type="Script" path="res://scripts/Potion.gd" id="11_fw8ys"]
+[ext_resource type="Texture2D" uid="uid://dclixwb4er7or" path="res://sprites/potion.png" id="12_ypsdu"]
+[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="13_tg0f7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1hp8"]
 radius = 19.0
@@ -37,9 +37,9 @@ size = Vector2(56, 56)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufjkh"]
 size = Vector2(58, 62)
 
-[node name="LevelTwo" type="Node2D" groups=["unapusable"]]
+[node name="LevelEight" type="Node2D" groups=["unapusable"]]
 position = Vector2(-1, 0)
-script = ExtResource("1_d64uk")
+script = ExtResource("1_jr2ew")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)
@@ -52,10 +52,10 @@ position = Vector2(-548, -227)
 scale = Vector2(0.5, 0.5)
 collision_layer = 7
 collision_mask = 7
-script = ExtResource("2_yopyf")
+script = ExtResource("2_6da65")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_dxm87")
+texture = ExtResource("3_uqb2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_m1hp8")
@@ -72,10 +72,10 @@ z_index = 2
 position = Vector2(-31, -225)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("4_gvw5g")
+script = ExtResource("4_rv58h")
 
 [node name="Sprite2D" type="Sprite2D" parent="RitualCircle"]
-texture = ExtResource("5_5cm04")
+texture = ExtResource("5_65tpu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle"]
 shape = SubResource("CircleShape2D_ib8rc")
@@ -85,17 +85,17 @@ z_index = 2
 position = Vector2(-28, 165)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("6_rqlp1")
+script = ExtResource("6_cfoyn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flame"]
-texture = ExtResource("7_qtobr")
+texture = ExtResource("7_upxq1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame"]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_cncxb")
 
 [node name="Map" type="TileMap" parent="."]
-tile_set = ExtResource("8_5fdop")
+tile_set = ExtResource("8_ohgmr")
 format = 2
 layer_0/name = "Walls"
 layer_0/navigation_enabled = false
@@ -113,10 +113,10 @@ z_index = 2
 position = Vector2(-480, 224)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_d04lm")
+script = ExtResource("9_px6fc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chest"]
-texture = ExtResource("16_y7q0s")
+texture = ExtResource("10_uk2lx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
 position = Vector2(0, 4)
@@ -124,13 +124,13 @@ shape = SubResource("RectangleShape2D_m164k")
 
 [node name="Potion" type="Area2D" parent="." groups=["potions"]]
 z_index = 2
-position = Vector2(483, -226)
+position = Vector2(545, -288)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_g7q7m")
+script = ExtResource("11_fw8ys")
 
 [node name="Sprite2D" type="Sprite2D" parent="Potion"]
-texture = ExtResource("11_hdq1k")
+texture = ExtResource("12_ypsdu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Potion"]
 position = Vector2(0, 5)
@@ -175,7 +175,7 @@ offset_left = 363.0
 offset_top = 130.0
 offset_right = 792.0
 offset_bottom = 199.0
-theme = ExtResource("13_nos5s")
+theme = ExtResource("13_tg0f7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
