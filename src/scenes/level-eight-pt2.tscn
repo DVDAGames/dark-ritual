@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://bhgapo6g842ly"]
+[gd_scene load_steps=28 format=3 uid="uid://bhgapo6g842ly"]
 
 [ext_resource type="Script" path="res://scripts/level-eight-pt2.gd" id="1_i68u8"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_d1vyq"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_w1mt8"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_2kk58"]
 [ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="4_kr3xt"]
 [ext_resource type="Script" path="res://scripts/Potion.gd" id="5_1cua2"]
@@ -108,6 +109,7 @@ script = ExtResource("1_i68u8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)
+script = ExtResource("2_w1mt8")
 
 [node name="Player" type="Area2D" parent="." groups=["pausable"]]
 light_mask = 2

@@ -1,24 +1,19 @@
-[gd_scene load_steps=34 format=3 uid="uid://gs7uuckxalea"]
+[gd_scene load_steps=32 format=3 uid="uid://di8uo7tjbs6ur"]
 
-[ext_resource type="Script" path="res://scripts/level-nine.gd" id="1_0xh56"]
-[ext_resource type="Texture2D" uid="uid://b2qk1vb0sui7j" path="res://sprites/wizard.png" id="2_0sydf"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="2_pc6ni"]
-[ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_xtshf"]
-[ext_resource type="Script" path="res://scripts/RitualCircle.gd" id="4_h2yfk"]
-[ext_resource type="Texture2D" uid="uid://cgktvj01rvd0j" path="res://sprites/ward.png" id="5_nj32g"]
-[ext_resource type="Script" path="res://scripts/Flame.gd" id="6_b6n6u"]
-[ext_resource type="Texture2D" uid="uid://cphfeucx3ai4u" path="res://sprites/flame.png" id="7_p1q63"]
-[ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="9_atfre"]
-[ext_resource type="Script" path="res://scripts/Brazier.gd" id="11_m886j"]
-[ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="12_t2enc"]
-[ext_resource type="Texture2D" uid="uid://b8sej4ivfw5qg" path="res://sprites/brazier_lit_unholy.png" id="13_4ymid"]
-[ext_resource type="Texture2D" uid="uid://cvfuyop76xdqw" path="res://sprites/brazier_lit.png" id="14_qt3tr"]
-[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="15_73ow5"]
-[ext_resource type="AudioStream" uid="uid://bvhgt5h1v3j2e" path="res://sounds/boom.wav" id="15_c23h5"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usyag"]
-radius = 22.6667
-height = 90.6667
+[ext_resource type="Script" path="res://scenes/level-nine-pt2.gd" id="1_8tpw4"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_40cqi"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="3_dcaql"]
+[ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="4_yq03n"]
+[ext_resource type="Script" path="res://scripts/RitualCircle.gd" id="5_vvxem"]
+[ext_resource type="Texture2D" uid="uid://cgktvj01rvd0j" path="res://sprites/ward.png" id="6_c2m7d"]
+[ext_resource type="Script" path="res://scripts/Flame.gd" id="7_rmrhe"]
+[ext_resource type="Texture2D" uid="uid://cphfeucx3ai4u" path="res://sprites/flame.png" id="8_xhprh"]
+[ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="9_4f5rm"]
+[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="10_2kpt2"]
+[ext_resource type="Script" path="res://scripts/Brazier.gd" id="11_7261n"]
+[ext_resource type="Texture2D" uid="uid://dinrq1inxnn6" path="res://sprites/brazier.png" id="12_82ce5"]
+[ext_resource type="Texture2D" uid="uid://b8sej4ivfw5qg" path="res://sprites/brazier_lit_unholy.png" id="13_ejt16"]
+[ext_resource type="Texture2D" uid="uid://cvfuyop76xdqw" path="res://sprites/brazier_lit.png" id="14_ltsrh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1hp8"]
 radius = 19.0
@@ -38,19 +33,19 @@ size = Vector2(56, 56)
 size = Vector2(58, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4vb8"]
-atlas = ExtResource("13_4ymid")
+atlas = ExtResource("13_ejt16")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4voqy"]
-atlas = ExtResource("13_4ymid")
+atlas = ExtResource("13_ejt16")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxv7r"]
-atlas = ExtResource("13_4ymid")
+atlas = ExtResource("13_ejt16")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlc7c"]
-atlas = ExtResource("13_4ymid")
+atlas = ExtResource("13_ejt16")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mu7bp"]
@@ -77,19 +72,19 @@ animations = [{
 size = Vector2(46.5, 51.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqhis"]
-atlas = ExtResource("14_qt3tr")
+atlas = ExtResource("14_ltsrh")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xxtp"]
-atlas = ExtResource("14_qt3tr")
+atlas = ExtResource("14_ltsrh")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chvnl"]
-atlas = ExtResource("14_qt3tr")
+atlas = ExtResource("14_ltsrh")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1vxv"]
-atlas = ExtResource("14_qt3tr")
+atlas = ExtResource("14_ltsrh")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uovwb"]
@@ -115,25 +110,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a6tf"]
 size = Vector2(21, 22)
 
-[node name="LevelNine" type="Node2D" groups=["unapusable"]]
+[node name="LevelNinePt2" type="Node2D" groups=["unapusable"]]
 position = Vector2(-1, 0)
-script = ExtResource("1_0xh56")
+script = ExtResource("1_8tpw4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)
-
-[node name="Boss" type="Area2D" parent="." groups=["effected_by_firebolt", "enemy"]]
-z_index = 2
-scale = Vector2(0.75, 0.75)
-
-[node name="Sprite2D" type="Sprite2D" parent="Boss"]
-texture = ExtResource("2_0sydf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
-position = Vector2(1.33333, 8)
-shape = SubResource("CapsuleShape2D_usyag")
-
-[node name="Caster" type="Marker2D" parent="Boss"]
+script = ExtResource("2_40cqi")
 
 [node name="Player" type="Area2D" parent="." groups=["pausable"]]
 light_mask = 2
@@ -143,10 +126,10 @@ position = Vector2(-545, -33)
 scale = Vector2(0.5, 0.5)
 collision_layer = 7
 collision_mask = 7
-script = ExtResource("2_pc6ni")
+script = ExtResource("3_dcaql")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_xtshf")
+texture = ExtResource("4_yq03n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_m1hp8")
@@ -156,30 +139,28 @@ shape = SubResource("CapsuleShape2D_m1hp8")
 [node name="Caster" type="Marker2D" parent="Player"]
 position = Vector2(40, 0)
 
-[node name="FireboltCooldown" type="Timer" parent="Player"]
-
 [node name="RitualCircle" type="Area2D" parent="." groups=["rituals"]]
 z_index = 2
-position = Vector2(-480, 32)
+position = Vector2(-480, 95)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("4_h2yfk")
+script = ExtResource("5_vvxem")
 
 [node name="Sprite2D" type="Sprite2D" parent="RitualCircle"]
-texture = ExtResource("5_nj32g")
+texture = ExtResource("6_c2m7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle"]
 shape = SubResource("CircleShape2D_ib8rc")
 
 [node name="RitualCircle2" type="Area2D" parent="." groups=["rituals"]]
 z_index = 2
-position = Vector2(481, -32)
+position = Vector2(482, -94)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("4_h2yfk")
+script = ExtResource("5_vvxem")
 
 [node name="Sprite2D" type="Sprite2D" parent="RitualCircle2"]
-texture = ExtResource("5_nj32g")
+texture = ExtResource("6_c2m7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle2"]
 shape = SubResource("CircleShape2D_ib8rc")
@@ -189,10 +170,10 @@ z_index = 2
 position = Vector2(99, 95)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("4_h2yfk")
+script = ExtResource("5_vvxem")
 
 [node name="Sprite2D" type="Sprite2D" parent="RitualCircle3"]
-texture = ExtResource("5_nj32g")
+texture = ExtResource("6_c2m7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle3"]
 shape = SubResource("CircleShape2D_ib8rc")
@@ -202,10 +183,10 @@ z_index = 2
 position = Vector2(95, -96)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("4_h2yfk")
+script = ExtResource("5_vvxem")
 
 [node name="Sprite2D" type="Sprite2D" parent="RitualCircle4"]
-texture = ExtResource("5_nj32g")
+texture = ExtResource("6_c2m7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle4"]
 shape = SubResource("CircleShape2D_ib8rc")
@@ -215,10 +196,10 @@ z_index = 2
 position = Vector2(-95, -99)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("4_h2yfk")
+script = ExtResource("5_vvxem")
 
 [node name="Sprite2D" type="Sprite2D" parent="RitualCircle5"]
-texture = ExtResource("5_nj32g")
+texture = ExtResource("6_c2m7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle5"]
 shape = SubResource("CircleShape2D_ib8rc")
@@ -228,10 +209,10 @@ z_index = 2
 position = Vector2(-96, 95)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("4_h2yfk")
+script = ExtResource("5_vvxem")
 
 [node name="Sprite2D" type="Sprite2D" parent="RitualCircle6"]
-texture = ExtResource("5_nj32g")
+texture = ExtResource("6_c2m7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle6"]
 shape = SubResource("CircleShape2D_ib8rc")
@@ -241,10 +222,10 @@ z_index = 2
 position = Vector2(-161, 159)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("6_b6n6u")
+script = ExtResource("7_rmrhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flame"]
-texture = ExtResource("7_p1q63")
+texture = ExtResource("8_xhprh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame"]
 position = Vector2(0, 8)
@@ -255,10 +236,10 @@ z_index = 2
 position = Vector2(416, 96)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("6_b6n6u")
+script = ExtResource("7_rmrhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flame5"]
-texture = ExtResource("7_p1q63")
+texture = ExtResource("8_xhprh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame5"]
 position = Vector2(0, 8)
@@ -269,10 +250,10 @@ z_index = 2
 position = Vector2(-413, -94)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("6_b6n6u")
+script = ExtResource("7_rmrhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flame6"]
-texture = ExtResource("7_p1q63")
+texture = ExtResource("8_xhprh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame6"]
 position = Vector2(0, 8)
@@ -283,10 +264,10 @@ z_index = 2
 position = Vector2(-157, -161)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("6_b6n6u")
+script = ExtResource("7_rmrhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flame4"]
-texture = ExtResource("7_p1q63")
+texture = ExtResource("8_xhprh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame4"]
 position = Vector2(0, 8)
@@ -297,10 +278,10 @@ z_index = 2
 position = Vector2(162, -160)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("6_b6n6u")
+script = ExtResource("7_rmrhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flame2"]
-texture = ExtResource("7_p1q63")
+texture = ExtResource("8_xhprh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame2"]
 position = Vector2(0, 8)
@@ -311,26 +292,26 @@ z_index = 2
 position = Vector2(161, 161)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("6_b6n6u")
+script = ExtResource("7_rmrhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flame3"]
-texture = ExtResource("7_p1q63")
+texture = ExtResource("8_xhprh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame3"]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_cncxb")
 
 [node name="Map" type="TileMap" parent="."]
-tile_set = ExtResource("9_atfre")
+tile_set = ExtResource("9_4f5rm")
 format = 2
 layer_0/name = "Walls"
 layer_0/navigation_enabled = false
 layer_1/name = "Platforms"
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(-65536, 0, 0, 65535, 0, 0, -131072, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131071, 0, 0, 131070, 0, 0, 65534, 0, 0, -2, 0, 0, -65538, 0, 0, -65534, 0, 0, 2, 0, 0, 65533, 0, 0, -3, 0, 0, 65538, 0, 0, -131070, 0, 0, -65539, 0, 0, 131069, 0, 0, -65545, 0, 0, -65544, 0, 0, -8, 0, 0, 65528, 0, 0, 131063, 0, 0, -9, 3, 0, -131065, 0, 0, -131064, 0, 0, -65528, 4, 0, 8, 0, 0, 65544, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0, 65536, 0, 0, 0, 0, 0, -1, 0, 0, -65537, 0, 0, 65527, 0, 0, 131064, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -262153, 0, 0, -327672, 0, 0, 327671, 0, 0, 262152, 0, 0)
+layer_1/tile_data = PackedInt32Array(-131071, 0, 0, 65537, 0, 0, 131070, 0, 0, -65538, 0, 0, -65534, 0, 0, 2, 0, 0, 65533, 0, 0, -3, 0, 0, 65538, 0, 0, -131070, 0, 0, -65539, 0, 0, 131069, 0, 0, -65545, 0, 0, -65544, 0, 0, -8, 0, 0, 65528, 0, 0, 131063, 0, 0, -9, 3, 0, -131065, 0, 0, -131064, 0, 0, -65528, 4, 0, 8, 0, 0, 65544, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0, 65527, 0, 0, 131064, 0, 0, -262153, 0, 0, -327672, 0, 0, 327671, 0, 0, 262152, 0, 0)
 layer_2/name = "Void"
 layer_2/z_index = -1
-layer_2/tile_data = PackedInt32Array(-327690, 2, 0, -262154, 2, 0, -196618, 2, 0, -10, 2, 0, 65526, 2, 0, 131062, 2, 0, 196598, 2, 0, 262134, 2, 0, 327670, 2, 0, 393206, 2, 0, 327689, 2, 0, 393207, 2, 0, 393208, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 262153, 2, 0, 196617, 2, 0, 131081, 2, 0, 65545, 2, 0, 9, 2, 0, -65527, 2, 0, -131063, 2, 0, -196599, 2, 0, -262135, 2, 0, -327671, 2, 0, -393207, 2, 0, -393208, 2, 0, -393209, 2, 0, -393210, 2, 0, -393211, 2, 0, -393212, 2, 0, -393213, 2, 0, -393214, 2, 0, -393215, 2, 0, -393216, 2, 0, -327681, 2, 0, -327682, 2, 0, -327683, 2, 0, -327684, 2, 0, -327685, 2, 0, -327686, 2, 0, -327687, 2, 0, -327688, 2, 0, -327689, 2, 0, -131082, 2, 0, -65546, 2, 0, -196617, 1, 0, -196616, 1, 0, -262152, 1, 0, -131080, 1, 0, -131081, 1, 0, -131079, 1, 0, -196615, 1, 0, -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -196613, 1, 0, -131077, 1, 0, -131076, 1, 0, -131078, 1, 0, -196614, 1, 0, -196612, 1, 0, -262148, 1, 0, -262147, 1, 0, -196611, 1, 0, -196610, 1, 0, -262146, 1, 0, -131075, 1, 0, -65543, 1, 0, -7, 1, 0, 65529, 1, 0, 131065, 1, 0, 196601, 1, 0, 196600, 1, 0, 196599, 1, 0, 262135, 1, 0, 262136, 1, 0, 327672, 1, 0, 327673, 1, 0, 262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 327675, 1, 0, 327674, 1, 0, 196602, 1, 0, 131066, 1, 0, 196603, 1, 0, 196604, 1, 0, 131067, 1, 0, 65531, 1, 0, -5, 1, 0, 65530, 1, 0, -6, 1, 0, -65542, 1, 0, -65541, 1, 0, -65540, 1, 0, -4, 1, 0, 65532, 1, 0, 131068, 1, 0, 196605, 1, 0, 262141, 1, 0, 262140, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 262145, 1, 0, 262144, 1, 0, 327679, 1, 0, 262146, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 262151, 1, 0, 262150, 1, 0, 262149, 1, 0, 262148, 1, 0, 262147, 1, 0, 196616, 1, 0, 131080, 1, 0, 131079, 1, 0, 131078, 1, 0, 131077, 1, 0, 131076, 1, 0, 131075, 1, 0, 65539, 1, 0, 131074, 1, 0, 65542, 1, 0, 6, 1, 0, -65530, 1, 0, -131066, 1, 0, -196602, 1, 0, -196603, 1, 0, -196604, 1, 0, -196605, 1, 0, -196606, 1, 0, -131069, 1, 0, -65533, 1, 0, 3, 1, 0, 4, 1, 0, 65540, 1, 0, 65541, 1, 0, 5, 1, 0, -65531, 1, 0, -131067, 1, 0, -131068, 1, 0, -65532, 1, 0, -196600, 1, 0, -196601, 1, 0, -262137, 1, 0, -262136, 1, 0, -327673, 1, 0, -327674, 1, 0, -327675, 1, 0, -327676, 1, 0, -327677, 1, 0, -327678, 1, 0, -327679, 1, 0, -327680, 1, 0, -262145, 1, 0, -196609, 1, 0, -262144, 1, 0, -262143, 1, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0)
+layer_2/tile_data = PackedInt32Array(-327690, 2, 0, -262154, 2, 0, -196618, 2, 0, -10, 2, 0, 65526, 2, 0, 131062, 2, 0, 196598, 2, 0, 262134, 2, 0, 327670, 2, 0, 393206, 2, 0, 327689, 2, 0, 393207, 2, 0, 393208, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 262153, 2, 0, 196617, 2, 0, 131081, 2, 0, 65545, 2, 0, 9, 2, 0, -65527, 2, 0, -131063, 2, 0, -196599, 2, 0, -262135, 2, 0, -327671, 2, 0, -393207, 2, 0, -393208, 2, 0, -393209, 2, 0, -393210, 2, 0, -393211, 2, 0, -393212, 2, 0, -393213, 2, 0, -393214, 2, 0, -393215, 2, 0, -393216, 2, 0, -327681, 2, 0, -327682, 2, 0, -327683, 2, 0, -327684, 2, 0, -327685, 2, 0, -327686, 2, 0, -327687, 2, 0, -327688, 2, 0, -327689, 2, 0, -131082, 2, 0, -65546, 2, 0, -196617, 1, 0, -196616, 1, 0, -262152, 1, 0, -131080, 1, 0, -131081, 1, 0, -131079, 1, 0, -196615, 1, 0, -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -196613, 1, 0, -131077, 1, 0, -131076, 1, 0, -131078, 1, 0, -196614, 1, 0, -196612, 1, 0, -262148, 1, 0, -262147, 1, 0, -196611, 1, 0, -196610, 1, 0, -262146, 1, 0, -131075, 1, 0, -65543, 1, 0, -7, 1, 0, 65529, 1, 0, 131065, 1, 0, 196601, 1, 0, 196600, 1, 0, 196599, 1, 0, 262135, 1, 0, 262136, 1, 0, 327672, 1, 0, 327673, 1, 0, 262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 327675, 1, 0, 327674, 1, 0, 196602, 1, 0, 131066, 1, 0, 196603, 1, 0, 196604, 1, 0, 131067, 1, 0, 65531, 1, 0, -5, 1, 0, 65530, 1, 0, -6, 1, 0, -65542, 1, 0, -65541, 1, 0, -65540, 1, 0, -4, 1, 0, 65532, 1, 0, 131068, 1, 0, 196605, 1, 0, 262141, 1, 0, 262140, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 262145, 1, 0, 262144, 1, 0, 327679, 1, 0, 262146, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 262151, 1, 0, 262150, 1, 0, 262149, 1, 0, 262148, 1, 0, 262147, 1, 0, 196616, 1, 0, 131080, 1, 0, 131079, 1, 0, 131078, 1, 0, 131077, 1, 0, 131076, 1, 0, 131075, 1, 0, 65539, 1, 0, 131074, 1, 0, 65542, 1, 0, 6, 1, 0, -65530, 1, 0, -131066, 1, 0, -196602, 1, 0, -196603, 1, 0, -196604, 1, 0, -196605, 1, 0, -196606, 1, 0, -131069, 1, 0, -65533, 1, 0, 3, 1, 0, 4, 1, 0, 65540, 1, 0, 65541, 1, 0, 5, 1, 0, -65531, 1, 0, -131067, 1, 0, -131068, 1, 0, -65532, 1, 0, -196600, 1, 0, -196601, 1, 0, -262137, 1, 0, -262136, 1, 0, -327673, 1, 0, -327674, 1, 0, -327675, 1, 0, -327676, 1, 0, -327677, 1, 0, -327678, 1, 0, -327679, 1, 0, -327680, 1, 0, -262145, 1, 0, -196609, 1, 0, -262144, 1, 0, -262143, 1, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131071, 1, 0, 65536, 1, 0, 0, 1, 0, -65536, 1, 0, -131072, 1, 0, -65537, 1, 0, -1, 1, 0, 65535, 1, 0, 65534, 1, 0, -2, 1, 0, -65535, 1, 0, 1, 1, 0)
 
 [node name="Goal" type="Area2D" parent="."]
 z_index = 1
@@ -369,7 +350,7 @@ offset_left = -213.0
 offset_top = -276.0
 offset_right = 216.0
 offset_bottom = -207.0
-theme = ExtResource("15_73ow5")
+theme = ExtResource("10_2kpt2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -381,80 +362,80 @@ offset_right = 508.0
 offset_bottom = 315.0
 text = "Keys: 0"
 
-[node name="Brazier" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt", "lit_braziers"]]
+[node name="Brazier" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt"]]
 light_mask = 14
 visibility_layer = 14
 z_index = 2
 position = Vector2(-542, 288)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier"]
-visible = false
-texture = ExtResource("12_t2enc")
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_mu7bp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier"]
 position = Vector2(-3.25, -1.75)
 shape = SubResource("RectangleShape2D_41mkw")
 
-[node name="Brazier2" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt", "lit_braziers"]]
+[node name="Brazier2" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt"]]
 light_mask = 14
 visibility_layer = 14
 z_index = 2
 position = Vector2(-544, -289)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier2"]
-visible = false
-texture = ExtResource("12_t2enc")
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier2"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_mu7bp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier2"]
 position = Vector2(-3.25, -1.75)
 shape = SubResource("RectangleShape2D_41mkw")
 
-[node name="Brazier3" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt", "lit_braziers"]]
+[node name="Brazier3" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt"]]
 light_mask = 14
 visibility_layer = 14
 z_index = 2
 position = Vector2(547, -289)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier3"]
-visible = false
-texture = ExtResource("12_t2enc")
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier3"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_mu7bp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier3"]
 position = Vector2(-3.25, -1.75)
 shape = SubResource("RectangleShape2D_41mkw")
 
-[node name="Brazier4" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt", "lit_braziers"]]
+[node name="Brazier4" type="Area2D" parent="." groups=["braziers", "effected_by_firebolt"]]
 light_mask = 14
 visibility_layer = 14
 z_index = 2
 position = Vector2(545, 288)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier4"]
-visible = false
-texture = ExtResource("12_t2enc")
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier4"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_mu7bp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier4"]
@@ -468,13 +449,13 @@ z_index = 2
 position = Vector2(-160, -95)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier5"]
-texture = ExtResource("12_t2enc")
+visible = false
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier5"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_uovwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier5"]
@@ -488,13 +469,13 @@ z_index = 2
 position = Vector2(160, -96)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier6"]
-texture = ExtResource("12_t2enc")
+visible = false
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier6"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_uovwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier6"]
@@ -508,13 +489,13 @@ z_index = 2
 position = Vector2(161, 96)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier7"]
-texture = ExtResource("12_t2enc")
+visible = false
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier7"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_uovwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier7"]
@@ -528,30 +509,24 @@ z_index = 2
 position = Vector2(-160, 95)
 collision_layer = 14
 collision_mask = 14
-script = ExtResource("11_m886j")
+script = ExtResource("11_7261n")
 
 [node name="UnlitBrazier" type="Sprite2D" parent="Brazier8"]
-texture = ExtResource("12_t2enc")
+visible = false
+texture = ExtResource("12_82ce5")
 
 [node name="LitBrazier" type="AnimatedSprite2D" parent="Brazier8"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_uovwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brazier8"]
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_2a6tf")
 
-[node name="BoomEffect" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_c23h5")
-
-[node name="BoomSoundTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
-[node name="CollapsePlatformTimer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="."]
 wait_time = 1.25
+one_shot = true
+autostart = true
 
-[connection signal="timeout" from="Player/FireboltCooldown" to="Player" method="_on_firebolt_cooldown_timeout"]
 [connection signal="area_entered" from="RitualCircle" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(1, 0)]]
 [connection signal="area_exited" from="RitualCircle" to="Player" method="_on_ritual_circle_area_exited"]
 [connection signal="area_entered" from="RitualCircle2" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(-1, 0)]]
@@ -596,5 +571,4 @@ wait_time = 1.25
 [connection signal="area_exited" from="Brazier7" to="Brazier7" method="_on_area_exited"]
 [connection signal="area_entered" from="Brazier8" to="Brazier8" method="_on_area_entered"]
 [connection signal="area_exited" from="Brazier8" to="Brazier8" method="_on_area_exited"]
-[connection signal="timeout" from="BoomSoundTimer" to="." method="_on_boom_sound_timer_timeout"]
-[connection signal="timeout" from="CollapsePlatformTimer" to="." method="_on_collapse_platform_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

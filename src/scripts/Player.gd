@@ -244,19 +244,27 @@ func _on_flame_area_entered(_area, direction):
 
 
 func _on_goal_area_entered(_area):
-  tooltip.set_text("Press SPACEBAR to venture on.")
-  tooltip.visible = true
+  if Globals.currentLevel == 9:
+    tooltip.set_text("The door is locked from the other side.")
+    tooltip.visible = true
+  else:
+    tooltip.set_text("Press SPACEBAR to venture on.")
+    tooltip.visible = true
 
-  action = "next"
-  actionMovement = Vector2(0,0)
+    action = "next"
+    actionMovement = Vector2(0,0)
 
 
 func _on_back_area_entered(_area):
-  tooltip.set_text("Press SPACEBAR to turn back.")
-  tooltip.visible = true
+  if Globals.currentLevel == 9:
+    tooltip.set_text("The door is locked from the other side.")
+    tooltip.visible = true
+  else:
+    tooltip.set_text("Press SPACEBAR to turn back.")
+    tooltip.visible = true
 
-  action = "back"
-  actionMovement = Vector2(0,0)
+    action = "back"
+    actionMovement = Vector2(0,0)
 
 
 func _on_ritual_circle_area_exited(_area):

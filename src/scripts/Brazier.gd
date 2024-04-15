@@ -5,6 +5,10 @@ extends Area2D
 
 @onready var tooltip := get_node("../HUD/Tooltip")
 @onready var Player := get_node("../Player")
+@onready var BoomSoundTimer := get_node("../BoomSoundTimer")
+@onready var BoomEffect := get_node("../BoomEffect")
+@onready var CollapsePlatformTimer := get_node("../CollapsePlatformTimer")
+@onready var camera := get_node("../Camera2D")
 
 func ignite():
   if not isLit:
@@ -38,6 +42,13 @@ func hit_by_firebolt():
     elif Globals.currentLevel == 8:
       if get_tree().get_nodes_in_group("lit_braziers").size() == 8:
         get_tree().change_scene_to_file("res://scenes/level-eight-pt2.tscn")
+    elif Globals.currentLevel == 9:
+      if get_tree().get_nodes_in_group("lit_braziers").size() == 8:
+
+        BoomSoundTimer.wait_time = 0.1
+        BoomSoundTimer.start()
+        BoomEffect.play()
+
 
 func _on_area_entered(area):
   if area.is_in_group("firebolts"):

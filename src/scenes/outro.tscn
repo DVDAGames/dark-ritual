@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf2wp0cgn587t"]
+
+[ext_resource type="Script" path="res://scenes/outro.gd" id="1_fc1e4"]
+[ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="2_usqaa"]
+[ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="3_ic0qf"]
+[ext_resource type="Theme" uid="uid://bf0sj3w50pf83" path="res://themes/title.tres" id="4_58ahv"]
+[ext_resource type="Theme" uid="uid://cusadnmhd8mjx" path="res://themes/subtitle.tres" id="5_gm5y2"]
+
+[node name="OutroScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fc1e4")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(842, 536)
+scale = Vector2(1.23047, 1.23047)
+texture = ExtResource("2_usqaa")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 470.0
+offset_right = 227.0
+offset_bottom = 580.0
+theme = ExtResource("3_ic0qf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ic0qf")
+theme_type_variation = &"FlatButton"
+text = "Play"
+alignment = 0
+
+[node name="HowToPlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ic0qf")
+theme_type_variation = &"FlatButton"
+text = "Options"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ic0qf")
+theme_type_variation = &"FlatButton"
+text = "Quit"
+alignment = 0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 106.0
+theme = ExtResource("4_58ahv")
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 82.0
+offset_right = 734.0
+offset_bottom = 105.0
+theme = ExtResource("5_gm5y2")
+text = "Dead Villager Dead Adventurer Games"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
