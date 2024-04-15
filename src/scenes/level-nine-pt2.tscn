@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://di8uo7tjbs6ur"]
 
-[ext_resource type="Script" path="res://scenes/level-nine-pt2.gd" id="1_8tpw4"]
+[ext_resource type="Script" path="res://scripts/level-nine-pt2.gd" id="1_8tpw4"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_40cqi"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="3_dcaql"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="4_yq03n"]
