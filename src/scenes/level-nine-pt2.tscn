@@ -1,13 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://di8uo7tjbs6ur"]
+[gd_scene load_steps=26 format=3 uid="uid://di8uo7tjbs6ur"]
 
 [ext_resource type="Script" path="res://scripts/level-nine-pt2.gd" id="1_8tpw4"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_40cqi"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="3_dcaql"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="4_yq03n"]
-[ext_resource type="Script" path="res://scripts/RitualCircle.gd" id="5_vvxem"]
-[ext_resource type="Texture2D" uid="uid://cgktvj01rvd0j" path="res://sprites/ward.png" id="6_c2m7d"]
-[ext_resource type="Script" path="res://scripts/Flame.gd" id="7_rmrhe"]
-[ext_resource type="Texture2D" uid="uid://cphfeucx3ai4u" path="res://sprites/flame.png" id="8_xhprh"]
 [ext_resource type="TileSet" uid="uid://cb6qxnvmr7mj2" path="res://tilesets/tiles.tres" id="9_4f5rm"]
 [ext_resource type="Theme" uid="uid://b4v7jhn0yyqbw" path="res://themes/base_theme.tres" id="10_2kpt2"]
 [ext_resource type="Script" path="res://scripts/Brazier.gd" id="11_7261n"]
@@ -18,13 +14,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1hp8"]
 radius = 19.0
 height = 110.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ib8rc"]
-radius = 18.9737
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cncxb"]
-radius = 7.0
-height = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fit0w"]
 size = Vector2(56, 56)
@@ -139,168 +128,6 @@ shape = SubResource("CapsuleShape2D_m1hp8")
 [node name="Caster" type="Marker2D" parent="Player"]
 position = Vector2(40, 0)
 
-[node name="RitualCircle" type="Area2D" parent="." groups=["rituals"]]
-z_index = 2
-position = Vector2(-480, 95)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("5_vvxem")
-
-[node name="Sprite2D" type="Sprite2D" parent="RitualCircle"]
-texture = ExtResource("6_c2m7d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle"]
-shape = SubResource("CircleShape2D_ib8rc")
-
-[node name="RitualCircle2" type="Area2D" parent="." groups=["rituals"]]
-z_index = 2
-position = Vector2(482, -94)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("5_vvxem")
-
-[node name="Sprite2D" type="Sprite2D" parent="RitualCircle2"]
-texture = ExtResource("6_c2m7d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle2"]
-shape = SubResource("CircleShape2D_ib8rc")
-
-[node name="RitualCircle3" type="Area2D" parent="." groups=["rituals"]]
-z_index = 2
-position = Vector2(99, 95)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("5_vvxem")
-
-[node name="Sprite2D" type="Sprite2D" parent="RitualCircle3"]
-texture = ExtResource("6_c2m7d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle3"]
-shape = SubResource("CircleShape2D_ib8rc")
-
-[node name="RitualCircle4" type="Area2D" parent="." groups=["rituals"]]
-z_index = 2
-position = Vector2(95, -96)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("5_vvxem")
-
-[node name="Sprite2D" type="Sprite2D" parent="RitualCircle4"]
-texture = ExtResource("6_c2m7d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle4"]
-shape = SubResource("CircleShape2D_ib8rc")
-
-[node name="RitualCircle5" type="Area2D" parent="." groups=["rituals"]]
-z_index = 2
-position = Vector2(-95, -99)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("5_vvxem")
-
-[node name="Sprite2D" type="Sprite2D" parent="RitualCircle5"]
-texture = ExtResource("6_c2m7d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle5"]
-shape = SubResource("CircleShape2D_ib8rc")
-
-[node name="RitualCircle6" type="Area2D" parent="." groups=["rituals"]]
-z_index = 2
-position = Vector2(-96, 95)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("5_vvxem")
-
-[node name="Sprite2D" type="Sprite2D" parent="RitualCircle6"]
-texture = ExtResource("6_c2m7d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RitualCircle6"]
-shape = SubResource("CircleShape2D_ib8rc")
-
-[node name="Flame" type="Area2D" parent="." groups=["flames"]]
-z_index = 2
-position = Vector2(-161, 159)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("7_rmrhe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Flame"]
-texture = ExtResource("8_xhprh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame"]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_cncxb")
-
-[node name="Flame5" type="Area2D" parent="." groups=["flames"]]
-z_index = 2
-position = Vector2(416, 96)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("7_rmrhe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Flame5"]
-texture = ExtResource("8_xhprh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame5"]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_cncxb")
-
-[node name="Flame6" type="Area2D" parent="." groups=["flames"]]
-z_index = 2
-position = Vector2(-413, -94)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("7_rmrhe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Flame6"]
-texture = ExtResource("8_xhprh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame6"]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_cncxb")
-
-[node name="Flame4" type="Area2D" parent="." groups=["flames"]]
-z_index = 2
-position = Vector2(-157, -161)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("7_rmrhe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Flame4"]
-texture = ExtResource("8_xhprh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame4"]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_cncxb")
-
-[node name="Flame2" type="Area2D" parent="." groups=["flames"]]
-z_index = 2
-position = Vector2(162, -160)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("7_rmrhe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Flame2"]
-texture = ExtResource("8_xhprh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame2"]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_cncxb")
-
-[node name="Flame3" type="Area2D" parent="." groups=["flames"]]
-z_index = 2
-position = Vector2(161, 161)
-collision_layer = 14
-collision_mask = 14
-script = ExtResource("7_rmrhe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Flame3"]
-texture = ExtResource("8_xhprh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame3"]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_cncxb")
-
 [node name="Map" type="TileMap" parent="."]
 tile_set = ExtResource("9_4f5rm")
 format = 2
@@ -308,7 +135,7 @@ layer_0/name = "Walls"
 layer_0/navigation_enabled = false
 layer_1/name = "Platforms"
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(-131071, 0, 0, 65537, 0, 0, 131070, 0, 0, -65538, 0, 0, -65534, 0, 0, 2, 0, 0, 65533, 0, 0, -3, 0, 0, 65538, 0, 0, -131070, 0, 0, -65539, 0, 0, 131069, 0, 0, -65545, 0, 0, -65544, 0, 0, -8, 0, 0, 65528, 0, 0, 131063, 0, 0, -9, 3, 0, -131065, 0, 0, -131064, 0, 0, -65528, 4, 0, 8, 0, 0, 65544, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0, 65527, 0, 0, 131064, 0, 0, -262153, 0, 0, -327672, 0, 0, 327671, 0, 0, 262152, 0, 0)
+layer_1/tile_data = PackedInt32Array(-131071, 0, 0, 65537, 0, 0, 131070, 0, 0, -65538, 0, 0, -65534, 0, 0, 2, 0, 0, 65533, 0, 0, -3, 0, 0, 65538, 0, 0, -131070, 0, 0, -65539, 0, 0, 131069, 0, 0, -65545, 0, 0, -65544, 0, 0, -8, 0, 0, 65528, 0, 0, 131063, 0, 0, -9, 3, 0, -131065, 0, 0, -131064, 0, 0, -65528, 4, 0, 8, 0, 0, 65544, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0, 65527, 0, 0, 131064, 0, 0, -262153, 0, 0, -327672, 0, 0, 327671, 0, 0, 262152, 0, 0, -2, 0, 0, 65534, 0, 0, 1, 0, 0, -65535, 0, 0, -131072, 0, 0, -65537, 0, 0, 131071, 0, 0, 65536, 0, 0)
 layer_2/name = "Void"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-327690, 2, 0, -262154, 2, 0, -196618, 2, 0, -10, 2, 0, 65526, 2, 0, 131062, 2, 0, 196598, 2, 0, 262134, 2, 0, 327670, 2, 0, 393206, 2, 0, 327689, 2, 0, 393207, 2, 0, 393208, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 262153, 2, 0, 196617, 2, 0, 131081, 2, 0, 65545, 2, 0, 9, 2, 0, -65527, 2, 0, -131063, 2, 0, -196599, 2, 0, -262135, 2, 0, -327671, 2, 0, -393207, 2, 0, -393208, 2, 0, -393209, 2, 0, -393210, 2, 0, -393211, 2, 0, -393212, 2, 0, -393213, 2, 0, -393214, 2, 0, -393215, 2, 0, -393216, 2, 0, -327681, 2, 0, -327682, 2, 0, -327683, 2, 0, -327684, 2, 0, -327685, 2, 0, -327686, 2, 0, -327687, 2, 0, -327688, 2, 0, -327689, 2, 0, -131082, 2, 0, -65546, 2, 0, -196617, 1, 0, -196616, 1, 0, -262152, 1, 0, -131080, 1, 0, -131081, 1, 0, -131079, 1, 0, -196615, 1, 0, -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -196613, 1, 0, -131077, 1, 0, -131076, 1, 0, -131078, 1, 0, -196614, 1, 0, -196612, 1, 0, -262148, 1, 0, -262147, 1, 0, -196611, 1, 0, -196610, 1, 0, -262146, 1, 0, -131075, 1, 0, -65543, 1, 0, -7, 1, 0, 65529, 1, 0, 131065, 1, 0, 196601, 1, 0, 196600, 1, 0, 196599, 1, 0, 262135, 1, 0, 262136, 1, 0, 327672, 1, 0, 327673, 1, 0, 262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 327675, 1, 0, 327674, 1, 0, 196602, 1, 0, 131066, 1, 0, 196603, 1, 0, 196604, 1, 0, 131067, 1, 0, 65531, 1, 0, -5, 1, 0, 65530, 1, 0, -6, 1, 0, -65542, 1, 0, -65541, 1, 0, -65540, 1, 0, -4, 1, 0, 65532, 1, 0, 131068, 1, 0, 196605, 1, 0, 262141, 1, 0, 262140, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 262145, 1, 0, 262144, 1, 0, 327679, 1, 0, 262146, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 262151, 1, 0, 262150, 1, 0, 262149, 1, 0, 262148, 1, 0, 262147, 1, 0, 196616, 1, 0, 131080, 1, 0, 131079, 1, 0, 131078, 1, 0, 131077, 1, 0, 131076, 1, 0, 131075, 1, 0, 65539, 1, 0, 131074, 1, 0, 65542, 1, 0, 6, 1, 0, -65530, 1, 0, -131066, 1, 0, -196602, 1, 0, -196603, 1, 0, -196604, 1, 0, -196605, 1, 0, -196606, 1, 0, -131069, 1, 0, -65533, 1, 0, 3, 1, 0, 4, 1, 0, 65540, 1, 0, 65541, 1, 0, 5, 1, 0, -65531, 1, 0, -131067, 1, 0, -131068, 1, 0, -65532, 1, 0, -196600, 1, 0, -196601, 1, 0, -262137, 1, 0, -262136, 1, 0, -327673, 1, 0, -327674, 1, 0, -327675, 1, 0, -327676, 1, 0, -327677, 1, 0, -327678, 1, 0, -327679, 1, 0, -327680, 1, 0, -262145, 1, 0, -196609, 1, 0, -262144, 1, 0, -262143, 1, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131071, 1, 0, 65536, 1, 0, 0, 1, 0, -65536, 1, 0, -131072, 1, 0, -65537, 1, 0, -1, 1, 0, 65535, 1, 0, 65534, 1, 0, -2, 1, 0, -65535, 1, 0, 1, 1, 0)
@@ -346,10 +173,10 @@ text = "Rituals Left: 0"
 
 [node name="Tooltip" type="Label" parent="HUD"]
 layout_mode = 0
-offset_left = -213.0
+offset_left = -456.0
 offset_top = -276.0
-offset_right = 216.0
-offset_bottom = -207.0
+offset_right = 457.0
+offset_bottom = -174.0
 theme = ExtResource("10_2kpt2")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -523,34 +350,10 @@ position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_2a6tf")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.25
+wait_time = 5.0
 one_shot = true
 autostart = true
 
-[connection signal="area_entered" from="RitualCircle" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(1, 0)]]
-[connection signal="area_exited" from="RitualCircle" to="Player" method="_on_ritual_circle_area_exited"]
-[connection signal="area_entered" from="RitualCircle2" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(-1, 0)]]
-[connection signal="area_exited" from="RitualCircle2" to="Player" method="_on_ritual_circle_area_exited"]
-[connection signal="area_entered" from="RitualCircle3" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(1, 1)]]
-[connection signal="area_exited" from="RitualCircle3" to="Player" method="_on_ritual_circle_area_exited"]
-[connection signal="area_entered" from="RitualCircle4" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(1, -1)]]
-[connection signal="area_exited" from="RitualCircle4" to="Player" method="_on_ritual_circle_area_exited"]
-[connection signal="area_entered" from="RitualCircle5" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(-1, -1)]]
-[connection signal="area_exited" from="RitualCircle5" to="Player" method="_on_ritual_circle_area_exited"]
-[connection signal="area_entered" from="RitualCircle6" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(-1, 1)]]
-[connection signal="area_exited" from="RitualCircle6" to="Player" method="_on_ritual_circle_area_exited"]
-[connection signal="area_entered" from="Flame" to="Player" method="_on_flame_area_entered" binds= [Vector2(1, -1)]]
-[connection signal="area_exited" from="Flame" to="Player" method="_on_flame_area_exited"]
-[connection signal="area_entered" from="Flame5" to="Player" method="_on_flame_area_entered" binds= [Vector2(1, 0)]]
-[connection signal="area_exited" from="Flame5" to="Player" method="_on_flame_area_exited"]
-[connection signal="area_entered" from="Flame6" to="Player" method="_on_flame_area_entered" binds= [Vector2(-1, 0)]]
-[connection signal="area_exited" from="Flame6" to="Player" method="_on_flame_area_exited"]
-[connection signal="area_entered" from="Flame4" to="Player" method="_on_flame_area_entered" binds= [Vector2(1, 1)]]
-[connection signal="area_exited" from="Flame4" to="Player" method="_on_flame_area_exited"]
-[connection signal="area_entered" from="Flame2" to="Player" method="_on_flame_area_entered" binds= [Vector2(-1, 1)]]
-[connection signal="area_exited" from="Flame2" to="Player" method="_on_flame_area_exited"]
-[connection signal="area_entered" from="Flame3" to="Player" method="_on_flame_area_entered" binds= [Vector2(-1, -1)]]
-[connection signal="area_exited" from="Flame3" to="Player" method="_on_flame_area_exited"]
 [connection signal="area_entered" from="Goal" to="Player" method="_on_goal_area_entered"]
 [connection signal="area_exited" from="Goal" to="Player" method="_on_goal_area_exited"]
 [connection signal="area_entered" from="Back" to="Player" method="_on_back_area_entered"]

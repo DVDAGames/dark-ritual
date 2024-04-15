@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://gs7uuckxalea"]
+[gd_scene load_steps=35 format=3 uid="uid://gs7uuckxalea"]
 
 [ext_resource type="Script" path="res://scripts/level-nine.gd" id="1_0xh56"]
 [ext_resource type="Texture2D" uid="uid://b2qk1vb0sui7j" path="res://sprites/wizard.png" id="2_0sydf"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_f2eiv"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_pc6ni"]
 [ext_resource type="Texture2D" uid="uid://b6xbufjpghh6w" path="res://sprites/cleric.png" id="3_xtshf"]
 [ext_resource type="Script" path="res://scripts/RitualCircle.gd" id="4_h2yfk"]
@@ -121,6 +122,7 @@ script = ExtResource("1_0xh56")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)
+script = ExtResource("2_f2eiv")
 
 [node name="Boss" type="Area2D" parent="." groups=["effected_by_firebolt", "enemy"]]
 z_index = 2
@@ -549,7 +551,6 @@ wait_time = 0.1
 one_shot = true
 
 [node name="CollapsePlatformTimer" type="Timer" parent="."]
-wait_time = 1.25
 
 [connection signal="timeout" from="Player/FireboltCooldown" to="Player" method="_on_firebolt_cooldown_timeout"]
 [connection signal="area_entered" from="RitualCircle" to="Player" method="_on_ritual_circle_area_entered" binds= [Vector2(1, 0)]]

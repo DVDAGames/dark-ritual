@@ -16,7 +16,7 @@ func _ready():
   $Player.startPosition()
   $Player.swap(2, true)
 
-  $HUD/Tooltip.set_text("The Wizard has been defeated. But there's a roaring chant coming from that chasm below.")
+  $HUD/Tooltip.set_text("The dark wizard has been defeated. But there's haunting chant coming from the abyss below.")
   $HUD/Tooltip.visible = true
 
 
